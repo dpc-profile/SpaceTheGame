@@ -5,7 +5,7 @@ export var thrust = 500   #força de impulso das turbunas da nave
 export var max_vel = 400   #velocidade maxima
 export var friction = 0.65  #o atrito da nave??(atrito no espaço?? REALY?????)
 export var bullet_speed = 1000
-export var fire_rate = 0.2
+export var fire_rate = 0.4 #velocidade da cadencia de tiro
 
 var bullet = preload("res://Cenas/player_bullet.tscn")
 
@@ -21,12 +21,16 @@ func _ready():
 	#position  = screen_size #centraliza o player na tela
 	
 func _process(delta):
-	if Input.is_action_just_pressed("player_shoot") and can_fire:
+	
+	if Input.is_action_pressed("player_shoot") and can_fire:
 		var bullet_instance = bullet.instance()
 		bullet_instance.position = $BulletPoint.get_global_position()
 		bullet_instance.rotation_degrees = rotation_degrees
 		bullet_instance.apply_impulse(Vector2(), Vector2(bullet_speed, 0).rotated(rotation))
 		get_tree().get_root().add_child(bullet_instance)
+		can_fire = false
+		yield(get_tree().create_timer(fire_rate),"timeout")
+		can_fire = true
 		
 func _physics_process(delta):
 	rot = 0
@@ -46,17 +50,3 @@ func _physics_process(delta):
 	rotation += rot_speed * rot * delta
 	#position += vel * delta
 	move_and_slide(vel)
-	
-	
-#---------------Não deixa a nave sair da tela-----------------------------------
-#	if position.x > screen_size.x:
-#		position.x = 0
-#	if position.x < 0:
-#		position.x = screen_size.x
-#	
-#	if position.y > screen_size.y:
-#		position.y = 0
-#	if position.y < 0:
-#		position.y = screen_size.y
-#-------------------------------------------------------------------------------
-	

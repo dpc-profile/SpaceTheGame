@@ -15,13 +15,13 @@ position = Vector2( 30.8909, 46.4323 )
 texture = ExtResource( 1 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 353.062, 357.147 )
+position = Vector2( 343.322, 240.266 )
 
 [node name="meteoro" parent="." instance=ExtResource( 3 )]
 position = Vector2( 958.378, 501.277 )
 
 [node name="meteoro2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 643.344, 96.029 )
+position = Vector2( 732.953, 187.586 )
 
 [node name="meteoro3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 142.154, 108.917 )
+position = Vector2( 568.77, 292.031 )

@@ -22,3 +22,11 @@ shape = SubResource( 1 )
 "player",
 ]]
 position = Vector2( 79, 0 )
+
+[node name="BulletPoint2" type="Node2D" parent="." groups=[
+"player",
+]]
+position = Vector2( 0, 70 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
