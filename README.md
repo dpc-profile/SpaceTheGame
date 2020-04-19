@@ -8,3 +8,4 @@ ps. é um arquivo zip
 Playlist de uns videos de godot
 https://www.youtube.com/playlist?list=PLgXwhBXKyr7GQGfttxX9hBNfNVFmy5nPs
 
+https://www.youtube.com/playlist?list=PLv3l-oZCXaqkUEqrLsKJIAhAxK_Im6Qew
