@@ -9,3 +9,15 @@ Playlist de uns videos de godot:
 https://www.youtube.com/playlist?list=PLgXwhBXKyr7GQGfttxX9hBNfNVFmy5nPs
 
 https://www.youtube.com/playlist?list=PLv3l-oZCXaqkUEqrLsKJIAhAxK_Im6Qew
+
+
+Mecanicas Definidas no jogo:
+-Cadastro de player em php
+-Multiplayer, usuários cadastrados interagem um com outro, em tempo real.
+-Modo de jogo "captura a bandeira", onde são feito 2 times e o objetivo é capturar a bandeira inimiga e trazer até a propria base.
+
+Concluido:
+-Mecanica de movimentação da nave
+
+
+Pendente:
