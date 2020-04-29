@@ -12,7 +12,7 @@ https://www.youtube.com/playlist?list=PLv3l-oZCXaqkUEqrLsKJIAhAxK_Im6Qew
 
 
 
-**Mecanicas Definidas no jogo:**
+## Mecanicas Definidas no jogo:
 
 -Cadastro de player em php
 
@@ -22,7 +22,7 @@ https://www.youtube.com/playlist?list=PLv3l-oZCXaqkUEqrLsKJIAhAxK_Im6Qew
 
 
 
-**Concluido:**
+## Concluido:
 
 -Mecanica de movimentação da nave
 
