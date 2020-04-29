@@ -11,7 +11,8 @@ https://www.youtube.com/playlist?list=PLgXwhBXKyr7GQGfttxX9hBNfNVFmy5nPs
 https://www.youtube.com/playlist?list=PLv3l-oZCXaqkUEqrLsKJIAhAxK_Im6Qew
 
 
-Mecanicas Definidas no jogo:
+
+**Mecanicas Definidas no jogo:**
 
 -Cadastro de player em php
 
@@ -19,9 +20,9 @@ Mecanicas Definidas no jogo:
 
 -Modo de jogo "captura a bandeira", onde são feito 2 times e o objetivo é capturar a bandeira inimiga e trazer até a propria base.
 
-Concluido:
+
+
+**Concluido:**
 
 -Mecanica de movimentação da nave
 
-
-Pendente:
