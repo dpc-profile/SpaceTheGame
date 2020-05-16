@@ -19,6 +19,11 @@ config/name="jogo_nave"
 run/main_scene="res://Cenas/Mapa.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [input]
 
 ui_select={
