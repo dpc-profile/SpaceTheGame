@@ -5,12 +5,6 @@ export var fire_rate = 0.4 #velocidade da cadencia de tiro
 export var thrust = 400   #força de impulso das turbunas da nave
 export var friction = 0.65  #original 0.65, o atrito da nave??(atrito no espaço?? REALY?????)
 
-
-export var max_move_speed = 600
-export var min_move_speed = 300
-export var stop_distance = 20
-
-var pos = Vector2() #posição
 var vel = Vector2() #velocidade
 var acc = Vector2() #aceleração
 

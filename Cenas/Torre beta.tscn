@@ -27,4 +27,6 @@ shape = SubResource( 2 )
 
 [node name="BulletPoint" type="Position2D" parent="."]
 light_mask = 32
+
+[node name="Timer" type="Timer" parent="."]
 [connection signal="body_shape_entered" from="Detec" to="." method="_on_Detec_body_shape_entered"]
