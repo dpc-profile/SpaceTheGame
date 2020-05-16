@@ -1,6 +1,6 @@
 extends Node2D
 
-var bullet_speed = 200
+var bullet_speed = 2
 var can_fire = true
 var bullet_cena = preload("res://Cenas/Torret fire.tscn")
 var fire_rate = 0.4
@@ -20,11 +20,13 @@ func _on_Detec_body_shape_entered(body_id, body, body_shape, area_shape):
 	if "player2" == nomebody:
 		var bullet = bullet_cena.instance()
 		var direcao = get_parent().get_node("player2").get_transform()
+		direcao = direcao[2]
+		print(direcao)
 		
 		bullet.global_position = $BulletPoint.global_position
 		bullet.rotation_degrees = rotation_degrees
 		bullet.rotate(80)
-		bullet.apply_impulse(Vector2(200,200), Vector2(200,200).rotated(rotation))
+		bullet.apply_impulse(Vector2(), Vector2(direcao*bullet_speed).rotated(rotation))
 		get_tree().root.add_child(bullet)
 	
 		can_fire = false
