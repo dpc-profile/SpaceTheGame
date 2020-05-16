@@ -3,7 +3,6 @@
 [ext_resource path="res://imagens/Image Sprites/sheet.png" type="Texture" id=1]
 [ext_resource path="res://imagens/luz/ocal.jpg" type="Texture" id=2]
 
-
 [sub_resource type="CircleShape2D" id=1]
 radius = 45.6843
 

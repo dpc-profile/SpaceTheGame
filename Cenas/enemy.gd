@@ -1,5 +1,6 @@
 extends KinematicBody2D
 export var life_player = 100
+var morreu = false 
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -15,6 +16,10 @@ func _process(delta):
 	
 func recebendo_dano(damage):
 	$ProgressBar.value -= damage
+	#chama a tela de GAME OVER
+	if($ProgressBar.value == 0):
+		get_tree().change_scene("res://Cenas/Game_over.tscn")
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

@@ -3,7 +3,6 @@
 [ext_resource path="res://imagens/Sprite_separado/sheet.playerShip1_orange.atlastex" type="Texture" id=1]
 [ext_resource path="res://script/player.gd" type="Script" id=2]
 
-
 [sub_resource type="CircleShape2D" id=1]
 radius = 41.8665
 
