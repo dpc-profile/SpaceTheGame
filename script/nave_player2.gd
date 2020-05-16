@@ -50,3 +50,6 @@ func shoot():
 	can_fire = false
 	yield(get_tree().create_timer(fire_rate),"timeout")
 	can_fire = true
+
+func recebendo_dano():
+	$ProgressBar.value -= 20

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://imagens/Image Sprites/spaceshippack13-SemFundo.png" type="Texture" id=1]
 [ext_resource path="res://imagens/luz/misterious.jpg" type="Texture" id=2]
+[ext_resource path="res://Cenas/enemy.gd" type="Script" id=3]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( -32.6644, -31.8379, -21.4259, -46.8226, -7.80344, -69.2997, 7.18127, -69.2997, 21.8254, -47.1632, 30.68, -29.7946, 24.8905, -13.7882, 40.5563, 18.2246, 0.370041, 83.953, -43.2218, 24.3547, -27.556, -13.4476 )
@@ -12,6 +13,7 @@ __meta__ = {
 }
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="KinematicBody2D"]
 texture = ExtResource( 1 )
@@ -31,6 +33,18 @@ color = Color( 1, 0.615686, 0.615686, 1 )
 energy = 3.14
 shadow_enabled = true
 shadow_item_cull_mask = 7168
+
+[node name="ProgressBar" type="ProgressBar" parent="KinematicBody2D"]
+modulate = Color( 0.45098, 0.870588, 0.529412, 1 )
+margin_left = -101.0
+margin_top = 100.0
+margin_right = 117.0
+margin_bottom = 136.0
+value = 100.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 light_mask = 2
