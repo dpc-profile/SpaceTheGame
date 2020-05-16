@@ -9,6 +9,8 @@ func _on_player_bullet_body_entered(body):
 	explosion_instance.position = get_global_position()
 	get_tree().get_root().add_child(explosion_instance)
 	queue_free()
+	if (body is KinematicBody2D):
+		body.recebendo_dano(damage)
 
 func _on_Timer_timeout():
 	queue_free()

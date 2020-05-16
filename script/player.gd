@@ -1,5 +1,5 @@
 extends KinematicBody2D
-
+#player movimentação wasd
 export var rot_speed = 2.5   #velocidade de rotação da nave
 export var thrust = 500   #força de impulso das turbunas da nave
 export var max_vel = 400   #velocidade maxima

@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://imagens/Background/blue.png" type="Texture" id=1]
+[ext_resource path="res://Cenas/lifeGui.gd" type="Script" id=2]
 
-[node name="Node2D" type="Node2D"]
-__meta__ = {
-"_edit_group_": true
-}
+[node name="GUI" type="Node2D"]
+position = Vector2( -17.2403, 13.7535 )
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.745098 )
@@ -38,6 +38,19 @@ margin_top = -2.69679
 margin_right = 39.191
 margin_bottom = 29.3032
 text = "2000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="life_player" type="ProgressBar" parent="."]
+modulate = Color( 0.0196078, 0.898039, 0.301961, 1 )
+self_modulate = Color( 0.145098, 0.968627, 0, 1 )
+margin_left = -74.8116
+margin_top = 31.7638
+margin_right = 72.1884
+margin_bottom = 45.7638
+value = 100.0
+percent_visible = false
 __meta__ = {
 "_edit_use_anchors_": false
 }

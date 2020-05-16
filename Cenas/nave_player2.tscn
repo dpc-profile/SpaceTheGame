@@ -19,9 +19,6 @@ polygon = PoolVector2Array( -0.468335, 36.5299, -21.453, 20.0421, -41.8381, 23.0
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 rotation = -3.13969
@@ -51,3 +48,13 @@ shadow_item_cull_mask = 3
 light_mask = 4
 occluder = SubResource( 3 )
 light_mask = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = -85.0
+margin_top = 43.0
+margin_right = 73.0
+margin_bottom = 63.0
+value = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
