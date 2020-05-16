@@ -1,8 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Game_over_foto/pixel-art-game-style-message-game-over-hd-animation-on-black-background_skplpyysl_thumbnail-full01.png" type="Texture" id=1]
+[ext_resource path="res://imagens/Game_over_foto/pixel-art-game-style-message-game-over-hd-animation-on-black-background_skplpyysl_thumbnail-full01.png" type="Texture" id=1]
 [ext_resource path="res://script/Game over.gd" type="Script" id=2]
 [ext_resource path="res://Fontes/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=3]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
