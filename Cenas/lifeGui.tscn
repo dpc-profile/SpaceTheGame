@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://imagens/Background/blue.png" type="Texture" id=1]
-[ext_resource path="res://Cenas/lifeGui.gd" type="Script" id=2]
+[ext_resource path="res://script/lifeGui.gd" type="Script" id=2]
+
 
 [node name="GUI" type="Node2D"]
 position = Vector2( -17.2403, 13.7535 )
