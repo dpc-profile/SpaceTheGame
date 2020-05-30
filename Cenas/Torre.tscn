@@ -7,11 +7,13 @@
 radius = 47.7056
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 207.696
+radius = 243.305
 
 [node name="Torre" type="Node2D"]
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]

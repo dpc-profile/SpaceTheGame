@@ -6,6 +6,7 @@ var velx = 60
 var dentro_area = false
 
 func _ready():
+	dentro_area = false
 	get_tree().root.print_tree()
 
 func _process(delta):
@@ -30,6 +31,7 @@ func _on_Area2D_body_entered(body):
 	dentro_area = true
 
 func _on_Area2D_body_exited(body):
+	print("saiu")
 	dentro_area  = false
 	
 func disparar():
@@ -37,3 +39,7 @@ func disparar():
 	bala.global_position = $bullet_point_enemy.global_position
 	bala.rotation = rotation
 	get_tree().root.add_child(bala)
+
+func recebendo_dano(damage):
+	return
+	
