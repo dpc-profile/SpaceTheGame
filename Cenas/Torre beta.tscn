@@ -7,7 +7,7 @@
 extents = Vector2( 32, 32 )
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 152.21
+radius = 168.19
 
 [node name="Torre" type="KinematicBody2D"]
 script = ExtResource( 3 )

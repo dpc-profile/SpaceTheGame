@@ -4,7 +4,7 @@ onready var player = get_parent().get_node("player2")
 
 var player_position
 var angulo
-var bullet_speed = 200
+var bullet_speed = 5
 var can_fire = true
 var bullet_cena = preload("res://Cenas/Torret fire.tscn")
 var fire_rate = 0.4
@@ -25,6 +25,8 @@ func _on_Detec_body_shape_entered(body_id, body, body_shape, area_shape):
 		player_position = player.get_global_position()
 		var bullet = bullet_cena.instance()
 		var direcao = $BulletPoint.position
+		var direcao2 = get_parent().get_node("player2").get_transform()
+		direcao2 = direcao2[2]
 		angulo = (get_angle_to(player_position)/3.14*180)
 		get_node("BulletPoint").rotation_degrees = (angulo)
 		print(angulo)
@@ -33,7 +35,7 @@ func _on_Detec_body_shape_entered(body_id, body, body_shape, area_shape):
 		bullet.global_position = $BulletPoint/Bullet.global_position
 		
 		bullet.rotation = get_angle_to(player_position)
-		bullet.apply_impulse(Vector2(), Vector2(direcao*bullet_speed))
+		bullet.apply_impulse(Vector2(), Vector2(direcao2*bullet_speed))
 		get_tree().root.add_child(bullet)
 	
 		can_fire = false

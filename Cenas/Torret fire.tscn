@@ -8,6 +8,7 @@ extents = Vector2( 24, 8 )
 
 [node name="Torret_fire" type="RigidBody2D"]
 collision_layer = 32
+gravity_scale = 0.0
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 2 )
