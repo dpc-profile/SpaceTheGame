@@ -24,15 +24,13 @@ region_rect = Rect2( 24, 214, 133, 177 )
 polygon = PoolVector2Array( -44.4637, 76.7024, -67.1588, 34.5543, -42.8426, -41.0961, -41.7619, -3.81126, -32.0354, -31.91, -21.2282, -86.4864, -19.6071, -61.0894, -3.39635, -86.4864, 3.62833, -86.4864, 18.218, -60.0087, 19.8391, -88.1074, 31.7271, -31.3696, 39.2921, -1.64983, 43.0746, -40.0154, 65.2294, 31.8525, 55.5029, 60.4916, 45.2361, 78.3235, 30.6463, 51.3055, 0.386169, 89.1306, -32.5758, 49.6844 )
 
 [node name="Light2D" type="Light2D" parent="KinematicBody2D"]
-light_mask = 7168
-position = Vector2( 0.830444, -100.398 )
+position = Vector2( -2.51001, -100.398 )
 rotation = 3.14159
 texture = ExtResource( 2 )
 offset = Vector2( 0, 512 )
 color = Color( 1, 0.615686, 0.615686, 1 )
 energy = 3.14
 shadow_enabled = true
-shadow_item_cull_mask = 7168
 
 [node name="ProgressBar" type="ProgressBar" parent="KinematicBody2D"]
 modulate = Color( 0.45098, 0.870588, 0.529412, 1 )

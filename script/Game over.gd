@@ -2,15 +2,15 @@ extends Node2D
 onready var timer = get_node("Timer")
 var segundos = 5
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	timer.set_wait_time(1.1) #duração do timer 1 segundo
-	timer.start()
+#Pressionar espaço para iniciar o timer
+func _process(delta):
+	if(Input.is_action_just_pressed("ui_select")):
+		timer.start()
 	
-		
+	
+#Sempre que o timer acaba, diminui 1 no segundos até
+#entrar na condição do if e mudar de cena
 func _on_Timer_timeout():
-	#TEM QUE FICAR SEGURANDO ESPAÇO KKKKK
-	if(Input.is_action_pressed("ui_select")):
 		segundos -= 1
 		get_node("Contador").set_text(str(segundos))
 		if segundos == -1:
