@@ -1,18 +1,15 @@
 extends KinematicBody2D
 
-
 export var thrust = 400   
 export var friction = 0.65 
 
 var delta
 var vel = Vector2() #velocidade
 var acc = Vector2() #aceleração
-func _ready():
-	pass # Replace with function body.
+
 #se move caso o player morra
 func _process(delta):
-	
-	
+	return #impede que o codigo rode e quebre o jogo
 	
 	#if(Input.is_action_just_pressed("espaco")):
 		#Renan: instaciar uma cena dentro de outra cena

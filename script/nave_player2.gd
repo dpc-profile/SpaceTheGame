@@ -29,11 +29,11 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_z"):
 		morte_falsa()
 	#Renan: Oculta ou mostra a gema ao lado da barra de vida
-	var gem_target = $"/root/global".collected
-	if(gem_target==true):
-		$gem_target.visible = true
-	else:
-		$gem_target.visible = false
+#	var gem_target = $"/root/global".collected
+#	if(gem_target==true):
+#		$gem_target.visible = true
+#	else:
+#		$gem_target.visible = false
 		
 func _olhe_para_mouse():
 	look_at(get_global_mouse_position())
