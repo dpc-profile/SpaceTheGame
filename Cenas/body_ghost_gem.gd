@@ -9,13 +9,13 @@ var acc = Vector2() #aceleração
 
 #se move caso o player morra
 func _process(delta):
-	return #impede que o codigo rode e quebre o jogo
+	#return #impede que o codigo rode e quebre o jogo
 	
 	#if(Input.is_action_just_pressed("espaco")):
 		#Renan: instaciar uma cena dentro de outra cena
 		#get_tree().get_node("res://Cenas/gem_body.tscn").add_child("res://Cenas/ghost_gem.tscn")
 	#mata o corpo da gema
-	if $"/root/global".status == "die":
+	if Global.status == "die":
 		queue_free()
 func look_to_home(delta):
 	look_at(get_global_mouse_position())

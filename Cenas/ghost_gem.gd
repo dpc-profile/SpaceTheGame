@@ -11,8 +11,7 @@ func _ready():
 func _on_ghost_gem_body_entered(body):
 	if body.name == "player2":
 		collected = true
-		$"/root/global".collected_gem(collected)
-		
-		$"/root/global".kill_gem_body()
+		Global.collected_gem(collected)
+		Global.kill_gem_body()
 		
 
