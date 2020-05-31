@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="jogo_nave"
-run/main_scene="res://Cenas/Mapa.tscn"
+run/main_scene="res://Cenas/TelaMenu/TitleScream.tscn"
 config/icon="res://icon.png"
 
 [input]
