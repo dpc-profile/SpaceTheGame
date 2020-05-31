@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Cenas/body_ghost_gem.gd" type="Script" id=1]
-[ext_resource path="res://imagens/Objects/black hole.jpg" type="Texture" id=2]
+[ext_resource path="res://Cenas/ghost_gem.tscn" type="PackedScene" id=3]
 
 [node name="gem_body" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -9,6 +9,4 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="APAGAAAAAAAAAaAacfas" type="Sprite" parent="."]
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 2 )
+[node name="ghost_gem" parent="." instance=ExtResource( 3 )]
