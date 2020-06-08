@@ -3,9 +3,11 @@ extends KinematicBody2D
 export var thrust = 400   
 export var friction = 0.65 
 
+
 var delta
 var vel = Vector2() #velocidade
 var acc = Vector2() #aceleração
+
 
 #se move caso o player morra
 func _process(delta):

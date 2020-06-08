@@ -8,9 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "Alert",
+"language": "GDScript",
+"path": "res://Cenas/ghost_gem.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://script/nave_player2.gd"
+} ]
 _global_script_class_icons={
-
+"Alert": "",
+"Player": ""
 }
 
 [application]
@@ -18,6 +29,10 @@ _global_script_class_icons={
 config/name="jogo_nave"
 run/main_scene="res://Cenas/TelaMenu/TitleScream.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://global.gd"
 
 [input]
 

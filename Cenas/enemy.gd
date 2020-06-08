@@ -1,25 +1,27 @@
 extends KinematicBody2D
-export var life_player = 100
-var morreu = false 
+#class_name Mob
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"5
-# Called when the node enters the scene tree for the first time.
+signal removed
+
+var speed = 50
+var velocity = Vector2()
+
+var minimap_icon = "mob"
+
 func _ready():
-	pass
+	rotation = rand_range(0, 2*PI)
 
-
-func _process(delta):
-	# life_player = get_tree().root.get_node("GUI").get_node("life_player").get_property("value")
-	pass
+func _physics_process(delta):
+	velocity = transform.x * speed
+	var collision = move_and_collide(velocity * delta)
+	if collision:
+		velocity = velocity.bounce(collision.normal).rotated(rand_range(-PI/4, PI/4))
+	rotation = velocity.angle()
 	
 func recebendo_dano(damage):
 	$ProgressBar.value -= damage
 	#chama a tela de GAME OVER
 	if($ProgressBar.value == 0):
 		get_tree().change_scene("res://Cenas/Game_over.tscn")
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
+

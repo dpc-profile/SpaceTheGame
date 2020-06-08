@@ -1,9 +1,12 @@
 extends KinematicBody2D
+#class_name Mob
 
-var cena_bala = preload("res://cenas/tiroTorre.tscn")
+var cena_bala = preload("res://Cenas/tiroTorre.tscn")
 var mov = Vector2(0,0)
 var velx = 60
 var dentro_area = false
+
+var minimap_icon="mob"
 
 func _ready():
 	dentro_area = false

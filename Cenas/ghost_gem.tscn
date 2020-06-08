@@ -68,7 +68,9 @@ tracks/0/keys = {
 [sub_resource type="CircleShape2D" id=4]
 radius = 45.297
 
-[node name="ghost_gem" type="Area2D"]
+[node name="Alert" type="Area2D" groups=[
+"minimap_objects",
+]]
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 3 )
 

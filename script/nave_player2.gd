@@ -1,9 +1,13 @@
 extends KinematicBody2D
 
+
+class_name Player
+#signal removed
 export var bullet_speed = 200 #original 200
 export var fire_rate = 0.4 #velocidade da cadencia de tiro
 export var thrust = 400   #força de impulso das turbunas da nave
 export var friction = 0.65  #original 0.65, o atrito da nave??(atrito no espaço?? REALY?????)
+#var minimap_icon="player"
 
 var vel = Vector2() #velocidade
 var acc = Vector2() #aceleração
