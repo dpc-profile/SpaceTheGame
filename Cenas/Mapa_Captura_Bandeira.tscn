@@ -148,4 +148,4 @@ margin_bottom = 0.0
 player = NodePath("../../player2")
 
 [node name="Mob" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1454.4, 1547.81 )
+position = Vector2( 1193.07, 1864.93 )

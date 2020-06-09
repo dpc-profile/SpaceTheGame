@@ -31,11 +31,13 @@ texture = SubResource( 1 )
 region_rect = Rect2( 314, 456, 101, 77 )
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+self_modulate = Color( 0, 1, 0.109804, 1 )
 margin_left = -85.0
 margin_top = 43.0
 margin_right = 73.0
 margin_bottom = 63.0
 value = 100.0
+percent_visible = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
