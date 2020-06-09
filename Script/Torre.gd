@@ -10,18 +10,11 @@ var minimap_icon="mob"
 
 func _ready():
 	dentro_area = false
-	get_tree().root.print_tree()
 
 func _process(delta):
-	mov.x = velx
-	mov.y = 0
-	var player = get_tree().root.get_node("Mapa/player2")
-	if player:
-		look_at(player.global_position)
-	else:
-		mov.x = 0
-	mov = mov.rotated(rotation)
-	#mov = move_and_slide(mov)
+	
+	if Global.player_global_pos != null:
+		look_at(Global.player_global_pos)
 
 
 func _on_Timer_timeout():
@@ -30,11 +23,10 @@ func _on_Timer_timeout():
 
 
 func _on_Area2D_body_entered(body):
-	print("entrou")
-	dentro_area = true
+	if body.is_in_group("player1"):	
+		dentro_area = true
 
 func _on_Area2D_body_exited(body):
-	print("saiu")
 	dentro_area  = false
 	
 func disparar():

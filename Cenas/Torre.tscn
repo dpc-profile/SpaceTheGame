@@ -7,7 +7,7 @@
 radius = 47.7056
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 243.305
+radius = 338.314
 
 [node name="Mob" type="KinematicBody2D" groups=[
 "minimap_objects",
@@ -29,6 +29,11 @@ region_rect = Rect2( 444, 92, 91, 90 )
 shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 2 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

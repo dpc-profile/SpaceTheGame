@@ -22,11 +22,14 @@ var direcao = Vector2()
 
 #Renan: função para setar a gema como invisivel
 func _ready():
+	add_to_group("player1")
 	$gem_target.visible = false
 	
 func _process(delta):
 	_olhe_para_mouse()
 	_mova_para_mouse(delta)
+	Global.player_global_pos = global_position
+	
 	if Input.is_action_pressed("mouse_left") and can_fire:
 		shoot()
 	#Renan: Solta a Gema, trocar pela morte depois

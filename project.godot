@@ -13,15 +13,9 @@ _global_script_classes=[ {
 "class": "Alert",
 "language": "GDScript",
 "path": "res://Cenas/ghost_gem.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "Player",
-"language": "GDScript",
-"path": "res://Script/nave_player2.gd"
 } ]
 _global_script_class_icons={
-"Alert": "",
-"Player": ""
+"Alert": ""
 }
 
 [application]
