@@ -1,12 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://imagens/Background/darkPurple.png" type="Texture" id=1]
 [ext_resource path="res://imagens/Objects/BGTile (3).png" type="Texture" id=2]
 [ext_resource path="res://Cenas/Torre.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Cenas/nave_player2.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Cenas/Enemy_ship.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Cenas/Enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Cenas/minimapa/MiniMap.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Cenas/Enemy.tscn" type="PackedScene" id=7]
 
 [sub_resource type="GradientTexture" id=1]
 
@@ -117,11 +116,11 @@ format = 1
 tile_data = PoolIntArray( -3801134, 0, 0, -3801130, 0, 0, -3801126, 0, 0, -3801122, 0, 0, -3801118, 0, 0, -3801114, 0, 0, -3801110, 0, 0, -3801106, 0, 0, -3801102, 0, 0, -3801098, 0, 0, -3801094, 0, 0, -3801090, 0, 0, -3866622, 0, 0, -3866618, 0, 0, -3866614, 0, 0, -3866610, 0, 0, -3866606, 0, 0, -3538990, 0, 0, -3604462, 0, 0, -3276846, 0, 0, -3342318, 0, 0, -3014702, 0, 0, -3080174, 0, 0, -2752558, 0, 0, -2818030, 0, 0, -2490414, 0, 0, -2555886, 0, 0, -2228270, 0, 0, -2293742, 0, 0, -1966126, 0, 0, -2031598, 0, 0, -1703982, 0, 0, -1769454, 0, 0, -1441838, 0, 0, -1507310, 0, 0, -1179694, 0, 0, -1245166, 0, 0, -917550, 0, 0, -983022, 0, 0, -655406, 0, 0, -720878, 0, 0, -393262, 0, 0, -458734, 0, 0, -131118, 0, 0, -196590, 0, 0, 131026, 0, 0, 65554, 0, 0, 393170, 0, 0, 327698, 0, 0, 655314, 0, 0, 589842, 0, 0, 917458, 0, 0, 917462, 0, 0, 917466, 0, 0, 917470, 0, 0, 917474, 0, 0, 917478, 0, 0, 917482, 0, 0, 917486, 0, 0, 917490, 0, 0, 917494, 0, 0, 917498, 0, 0, 917502, 0, 0, 851970, 0, 0, 851974, 0, 0, 851978, 0, 0, 851982, 0, 0, 851986, 0, 0 )
 
 [node name="Torre3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1419.22, 727.774 )
+position = Vector2( 1416, 736 )
 rotation = 0.0257099
 
 [node name="Torre4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 369.15, 356.878 )
+position = Vector2( 376, 352 )
 rotation = 0.0257099
 
 [node name="Torre5" parent="." instance=ExtResource( 3 )]
@@ -129,21 +128,15 @@ position = Vector2( 1172.55, 353.453 )
 rotation = 0.0257099
 
 [node name="Torre2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 767.263, 728.15 )
+position = Vector2( 767.263, 734.625 )
 rotation = 0.0257099
 
 [node name="Torre" parent="." instance=ExtResource( 3 )]
-position = Vector2( 127.425, 741.849 )
+position = Vector2( 128, 736 )
 rotation = 0.0257099
 
 [node name="player2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 767.239, 2001.26 )
-
-[node name="Mob" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1354.98, 1469.29 )
-
-[node name="Enemy_ship" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1600.63, 1521.01 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -152,3 +145,7 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -200.0
 margin_bottom = 0.0
+player = NodePath("../../player2")
+
+[node name="Mob" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1454.4, 1547.81 )

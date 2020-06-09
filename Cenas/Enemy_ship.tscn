@@ -7,19 +7,20 @@
 radius = 47.3096
 height = 1.47021
 
-[node name="Enemy_ship" type="Node2D"]
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+[node name="Enemy_ship" type="KinematicBody2D" groups=[
+"minimap_objects",
+"mob",
+]]
 rotation = 1.5708
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+[node name="Sprite" type="Sprite" parent="."]
 self_modulate = Color( 1, 0, 0, 1 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 505, 897, 91, 91 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

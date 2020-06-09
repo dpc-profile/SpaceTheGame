@@ -4,7 +4,7 @@
 [ext_resource path="res://Script/Torre.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 47.7056
+radius = 52.8903
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 338.314
@@ -12,6 +12,7 @@ radius = 338.314
 [node name="Mob" type="KinematicBody2D" groups=[
 "minimap_objects",
 ]]
+scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
@@ -28,12 +29,13 @@ region_rect = Rect2( 444, 92, 91, 90 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area_Visão" type="Area2D" parent="."]
 collision_layer = 3
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Visão"]
+visible = false
 shape = SubResource( 2 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Area_Visão" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area_Visão" to="." method="_on_Area2D_body_exited"]

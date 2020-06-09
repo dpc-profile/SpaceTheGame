@@ -72,8 +72,15 @@ func shoot():
 	yield(get_tree().create_timer(fire_rate),"timeout")
 	can_fire = true
 
-func recebendo_dano():
-	$ProgressBar.value -= 20
+#remova o return para quando o hp do player zerar dar game_over
+func recebendo_dano(dano):
+	$ProgressBar.value -= dano
+	if $ProgressBar.value <= 0:
+		return
+		game_over()
+		
+func game_over():
+	get_tree().change_scene("res://Cenas/Game_over.tscn")
 
 func morte_falsa():
 	#instancia a gema com base na posição atual do player
@@ -83,5 +90,3 @@ func morte_falsa():
 		#Oculta as indicações da bandeira
 		gem_droped = false
 		$"/root/global".collected_gem(gem_droped)
-		
-		

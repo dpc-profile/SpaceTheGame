@@ -22,8 +22,6 @@ func _on_Comecar_pressed():
 		return
 #Para a MusicaDoMenu	
 	get_node("/root/menu_musica/AudioStreamPlayer").stop()
-	get_tree().change_scene("res://Cenas/Mapa.tscn")
-	
+	#get_tree().change_scene("res://Cenas/Mapa.tscn")
+	get_tree().change_scene("res://Cenas/Mapa_Captura_Bandeira.tscn")
 	pass # Replace with function body.
-	
-

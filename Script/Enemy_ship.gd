@@ -1,10 +1,13 @@
 extends KinematicBody2D
 
+#class_name Mob
+
+signal removed
+
 export var velx = 60
 var mov = Vector2(0,0)
 
-func _ready():
-	add_to_group("player2")
+var minimap_icon = "mob"
 
 #comentando o 'mov = move_and_slide(mov)' o inimigo não se mexe
 func _process(delta):
