@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://imagens/Game_over_foto/pixel-art-game-style-message-game-over-hd-animation-on-black-background_skplpyysl_thumbnail-full01.png" type="Texture" id=1]
+[ext_resource path="res://script/Game over.gd" type="Script" id=2]
+[ext_resource path="res://Fontes/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 35
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 35
+font_data = ExtResource( 3 )
+
+[node name="Game over" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -36.186
+margin_top = -32.309
+margin_right = 1883.81
+margin_bottom = 1047.69
+rect_scale = Vector2( 0.702816, 0.703872 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Contador" type="Label" parent="."]
+margin_left = 1068.71
+margin_top = 649.312
+margin_right = 1091.71
+margin_bottom = 685.312
+custom_fonts/font = SubResource( 1 )
+text = "5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pressione Espaço" type="Label" parent="Contador"]
+margin_left = -819.911
+margin_top = -77.5732
+margin_right = -84.9106
+margin_bottom = -46.5732
+custom_fonts/font = SubResource( 2 )
+text = "Pressione \"Espaço\" para dar respawn"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Respawn em" type="Label" parent="Contador"]
+margin_left = -233.236
+margin_right = 501.764
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 3 )
+text = "Respawn em:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
