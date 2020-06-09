@@ -8,23 +8,18 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 func _on_ContinueButton_mouse_entered():
-	#muda o tamanho	 
+#muda a cor	
 	set_modulate(mouse_over)
 #muda o tamanho	
 	set_scale(Vector2(1,1))
 	pass # Replace with function body.
-	
 
 
 func _on_ContinueButton_mouse_exited():
-	#muda a cor	
+#muda a cor	
 	set_modulate(mouse_out)
 #muda o tamanho	
 	set_scale(Vector2(1,1))
 	pass # Replace with function body.
-	

@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-class_name Player
+#class_name Player
 #signal removed
 export var bullet_speed = 200 #original 200
 export var fire_rate = 0.4 #velocidade da cadencia de tiro
@@ -38,6 +38,9 @@ func _process(delta):
 #		$gem_target.visible = true
 #	else:
 #		$gem_target.visible = false
+
+#Coloca o Nickname no Player
+	$GUI/NickName.text = get_node("/root/pega_Nome").player_Nome
 		
 func _olhe_para_mouse():
 	look_at(get_global_mouse_position())

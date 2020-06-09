@@ -21,7 +21,7 @@ func _on_OptionButton_mouse_entered():
 
 
 func _on_OptionButton_mouse_exited():
-#muda a cor	
+		#muda a cor	
 	set_modulate(mouse_out)
 #muda o tamanho	
 	set_scale(Vector2(1,1))
