@@ -2,7 +2,7 @@ extends Control
 
 #Chama a chama a MusicaDoMenu
 func _ready():
-	get_node("/root/menu_musica/AudioStreamPlayer").play()
+	get_node("/root/menu_musica/")
 	
 #Esconde a HBox do menu inicial e mostra a HBox de escolha modo Solo ou multiplayer	
 func _on_NewGameButton_pressed():

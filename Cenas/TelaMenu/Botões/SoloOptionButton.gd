@@ -21,5 +21,8 @@ func _on_SoloOptionButton_mouse_exited():
 
 
 func _on_SoloOptionButton_pressed():
+<<<<<<< HEAD
 	Network.MULTIPLAYER_ON = false
+=======
+>>>>>>> Adaptando pro multiplayer
 	get_tree().change_scene("res://Cenas/TelaMenu/Tela_Nome.tscn")
