@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://imagens/Image Sprites/spaceshippack13-SemFundo.png" type="Texture" id=1]
+[ext_resource path="res://imagens/luz/misterious.jpg" type="Texture" id=2]
+[ext_resource path="res://Cenas/enemy.gd" type="Script" id=3]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 61.975
+height = 51.1847
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( -32.6644, -31.8379, -21.4259, -46.8226, -7.80344, -69.2997, 7.18127, -69.2997, 21.8254, -47.1632, 30.68, -29.7946, 24.8905, -13.7882, 40.5563, 18.2246, 0.370041, 83.953, -43.2218, 24.3547, -27.556, -13.4476 )
+
+[node name="Mob" type="KinematicBody2D" groups=[
+"minimap_objects",
+"mobs",
+"player2",
+]]
+scale = Vector2( 0.8, 0.8 )
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 24, 214, 133, 177 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="."]
+visible = false
+position = Vector2( -2.51001, -100.398 )
+rotation = 3.14159
+texture = ExtResource( 2 )
+offset = Vector2( 0, 512 )
+color = Color( 1, 0.615686, 0.615686, 1 )
+energy = 3.14
+shadow_enabled = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
+light_mask = 2
+occluder = SubResource( 1 )
+light_mask = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+modulate = Color( 0.45098, 0.870588, 0.529412, 1 )
+margin_left = -101.0
+margin_top = 100.0
+margin_right = 117.0
+margin_bottom = 136.0
+value = 100.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
