@@ -3,7 +3,7 @@
 [ext_resource path="res://imagens/Background/darkPurple.png" type="Texture" id=1]
 [ext_resource path="res://imagens/Objects/BGTile (3).png" type="Texture" id=2]
 [ext_resource path="res://Cenas/Torre.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Cenas/nave_player2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Cenas/Mapa_Captura_Bandeira.gd" type="Script" id=4]
 [ext_resource path="res://Cenas/minimapa/MiniMap.tscn" type="PackedScene" id=6]
 
 [sub_resource type="GradientTexture" id=1]
@@ -61,10 +61,7 @@ points = PoolVector2Array( 256, 256, 0, 256, 0, 0, 256, 0 )
 0/z_index = 0
 
 [node name="Mapa_Captura_Bandeira" type="Node2D"]
-__meta__ = {
-"_edit_horizontal_guides_": [ 1024.0 ],
-"_edit_vertical_guides_": [ 768.0 ]
-}
+script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 768, 1024 )
@@ -74,17 +71,19 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="up_side_spawn" type="Sprite" parent="."]
+position = Vector2( 768, 48 )
+scale = Vector2( 0.108733, 84.7971 )
+texture = SubResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="up_side_spawn"]
+
 [node name="down_side_spawn" type="Sprite" parent="."]
 position = Vector2( 768, 2000 )
 scale = Vector2( 0.108733, 84.7971 )
 texture = SubResource( 1 )
 
 [node name="Position2D" type="Position2D" parent="down_side_spawn"]
-
-[node name="up_side_spawn2" type="Sprite" parent="."]
-position = Vector2( 768, 48 )
-scale = Vector2( 0.108733, 84.7971 )
-texture = SubResource( 1 )
 
 [node name="down_side" type="TileMap" parent="."]
 position = Vector2( 768, 1024 )
@@ -134,9 +133,6 @@ rotation = 0.0257099
 position = Vector2( 128, 736 )
 rotation = 0.0257099
 
-[node name="player2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 767.239, 2001.26 )
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MiniMap" parent="CanvasLayer" instance=ExtResource( 6 )]
@@ -144,4 +140,3 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -200.0
 margin_bottom = 0.0
-player = NodePath("../../player2")

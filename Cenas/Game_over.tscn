@@ -22,10 +22,10 @@ script = ExtResource( 2 )
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -36.0
-margin_top = -32.0
-margin_right = 1884.0
-margin_bottom = 1048.0
+margin_left = -169.286
+margin_top = -99.6681
+margin_right = 1750.71
+margin_bottom = 980.332
 rect_scale = Vector2( 0.702816, 0.703872 )
 texture = ExtResource( 1 )
 __meta__ = {
@@ -35,10 +35,10 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Contador" type="Label" parent="."]
-margin_left = 1068.71
-margin_top = 649.312
-margin_right = 1091.71
-margin_bottom = 685.312
+margin_left = 939.525
+margin_top = 546.785
+margin_right = 962.525
+margin_bottom = 582.785
 custom_fonts/font = SubResource( 1 )
 text = "5"
 __meta__ = {
@@ -46,10 +46,10 @@ __meta__ = {
 }
 
 [node name="Pressione Espaço" type="Label" parent="Contador"]
-margin_left = -819.911
-margin_top = -77.5732
-margin_right = -84.9106
-margin_bottom = -46.5732
+margin_left = -771.525
+margin_top = -98.7847
+margin_right = -36.525
+margin_bottom = -67.7847
 custom_fonts/font = SubResource( 2 )
 text = "Pressione \"Espaço\" para dar respawn"
 align = 1

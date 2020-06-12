@@ -14,4 +14,4 @@ func _on_Timer_timeout():
 		segundos -= 1
 		get_node("Contador").set_text(str(segundos))
 		if segundos == -1:
-			get_tree().change_scene("res://Cenas/Mapa.tscn")
+			get_tree().change_scene("res://Cenas/Mapa_Captura_Bandeira.tscn")
