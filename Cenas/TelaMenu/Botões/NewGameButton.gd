@@ -17,8 +17,3 @@ func _on_NewGameButton_mouse_exited():
 	set_modulate(mouse_out)
 	#muda o tamanho	
 	set_scale(Vector2(1,1))
-
-
-func _on_NewGameButton_pressed():
-	
-	get_tree().change_scene("res://Cenas/TelaMenu/Tela_Nome.tscn")

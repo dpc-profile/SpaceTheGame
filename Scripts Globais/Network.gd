@@ -1,11 +1,13 @@
 extends Node
 
-var DEFAULT_IP = '192.168.0.3'
-var DEFAULT_PORT = 49675
-const MAX_PLAYERS = 10
+const DEFAULT_IP = '192.168.0.3'
+const DEFAULT_PORT = 49675
+const MAX_PLAYERS = 6
 
+var conexao = [DEFAULT_IP, DEFAULT_PORT]
+var MULTIPLAYER_ON = false
 var players = { }
-var self_data = { name = '', position = Vector2(360, 180) }
+var self_data = { name = '', position = Vector2(0, 0)}
 
 signal player_disconnected
 signal server_disconnected
@@ -16,16 +18,23 @@ func _ready():
 
 func create_server(player_nickname):
 	self_data.name = player_nickname
-	players[1] = self_data
+	players[0] = self_data
 	var peer = NetworkedMultiplayerENet.new()
-	peer.create_server(DEFAULT_PORT, MAX_PLAYERS)
+	
+	if conexao[1] != Network.DEFAULT_PORT:
+		peer.create_server(conexao[1], MAX_PLAYERS)
+	else:	
+		peer.create_server(DEFAULT_PORT, MAX_PLAYERS)
 	get_tree().set_network_peer(peer)
 
 func connect_to_server(player_nickname):
 	self_data.name = player_nickname
 	get_tree().connect('connected_to_server', self, '_connected_to_server')
 	var peer = NetworkedMultiplayerENet.new()
-	peer.create_client(DEFAULT_IP, DEFAULT_PORT)
+	if conexao[0] != Network.DEFAULT_IP:
+		peer.create_client(conexao[0], DEFAULT_PORT)
+	else:
+		peer.create_client(DEFAULT_IP, DEFAULT_PORT)
 	get_tree().set_network_peer(peer)
 
 func _connected_to_server():
@@ -54,11 +63,11 @@ remote func _request_players(request_from_id):
 
 remote func _send_player_info(id, info):
 	players[id] = info
-	var new_player = load('res://player/Player.tscn').instance()
+	var new_player = load('res://Cenas/nave_player2.tscn').instance()
 	new_player.name = str(id)
 	new_player.set_network_master(id)
-	$'/root/Game/'.add_child(new_player)
-	new_player.init(info.name, info.position, true)
+	$'/root/Cena/Mapa_Captura_Bandeira/'.add_child(new_player)
+	new_player.init(info.name, info.position, false)
 
 func update_position(id, position):
 	players[id].position = position
