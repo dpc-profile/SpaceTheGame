@@ -23,7 +23,7 @@ func _on_Timer_timeout():
 
 
 func _on_Area2D_body_entered(body):
-	if body.is_in_group("player1"):	
+	if body.is_in_group("player1"):
 		dentro_area = true
 
 func _on_Area2D_body_exited(body):

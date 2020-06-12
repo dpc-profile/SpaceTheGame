@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Cenas/TelaMenu/Tela_Nome.gd" type="Script" id=1]
 [ext_resource path="res://Cenas/TelaMenu/Botões/ComecarButton.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Cenas/TelaMenu/Botões/ComecarButton.gd" type="Script" id=4]
 [ext_resource path="res://Cenas/TelaMenu/Botões/VoltarButton.gd" type="Script" id=5]
 [ext_resource path="res://Fontes/marcellus-sc.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Cenas/TelaMenu/Botões/CriarServer.gd" type="Script" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -22,42 +23,106 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-mouse_out = Color( 1, 1, 1, 1 )
-mouse_over = Color( 1, 1, 1, 1 )
+mouse_over = Color( 0.501961, 0.501961, 0.501961, 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="IP_Porta" type="VBoxContainer" parent="."]
+margin_left = 288.0
+margin_top = 160.0
+margin_right = 1400.0
+margin_bottom = 264.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IP" type="HBoxContainer" parent="IP_Porta"]
+margin_right = 1112.0
+margin_bottom = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextoIP" type="Label" parent="IP_Porta/IP"]
+margin_top = 2.0
+margin_right = 296.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 280, 0 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "      IP de conexão:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IP" type="LineEdit" parent="IP_Porta/IP"]
+margin_left = 300.0
+margin_right = 540.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 240, 50 )
+
+[node name="Porta" type="HBoxContainer" parent="IP_Porta"]
+margin_top = 54.0
+margin_right = 1112.0
+margin_bottom = 104.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextoPorta" type="Label" parent="IP_Porta/Porta"]
+margin_top = 2.0
+margin_right = 297.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 280, 0 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Porta de conexão:"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Porta" type="LineEdit" parent="IP_Porta/Porta"]
+margin_left = 301.0
+margin_right = 541.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 240, 50 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -298.0
-margin_top = -62.5
-margin_right = 298.0
-margin_bottom = 62.5
+margin_left = -537.237
+margin_top = -24.6401
+margin_right = 574.763
+margin_bottom = 100.36
 size_flags_horizontal = 4
 size_flags_vertical = 0
+alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 596.0
+margin_right = 1112.0
 margin_bottom = 61.0
 size_flags_horizontal = 5
+alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+margin_left = 258.0
 margin_top = 8.0
-margin_right = 352.0
+margin_right = 610.0
 margin_bottom = 53.0
 rect_min_size = Vector2( 280, 0 )
 custom_fonts/font = SubResource( 1 )
@@ -68,19 +133,32 @@ __meta__ = {
 }
 
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
-margin_left = 356.0
-margin_right = 596.0
+margin_left = 614.0
+margin_right = 854.0
 margin_bottom = 61.0
 rect_min_size = Vector2( 240, 50 )
 custom_fonts/font = SubResource( 2 )
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 65.0
-margin_right = 596.0
+margin_right = 1112.0
 margin_bottom = 125.0
+alignment = 1
+
+[node name="CriarServer" parent="VBoxContainer/HBoxContainer2" instance=ExtResource( 2 )]
+margin_left = 139.0
+margin_right = 414.0
+rect_min_size = Vector2( 275, 60 )
+focus_mode = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+enabled_focus_mode = 0
+text = "Criar Server"
+script = ExtResource( 7 )
+mouse_over = Color( 0.501961, 0.501961, 0.501961, 1 )
 
 [node name="Comecar" parent="VBoxContainer/HBoxContainer2" instance=ExtResource( 2 )]
-margin_right = 275.0
+margin_left = 418.0
+margin_right = 693.0
 rect_min_size = Vector2( 275, 60 )
 focus_mode = 0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -89,18 +167,39 @@ script = ExtResource( 4 )
 mouse_over = Color( 0.501961, 0.501961, 0.501961, 1 )
 
 [node name="Volta" parent="VBoxContainer/HBoxContainer2" instance=ExtResource( 3 )]
-margin_left = 279.0
-margin_right = 554.0
+margin_left = 697.0
+margin_right = 972.0
 rect_min_size = Vector2( 275, 60 )
 focus_mode = 0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 enabled_focus_mode = 0
 script = ExtResource( 5 )
 mouse_over = Color( 0.501961, 0.501961, 0.501961, 1 )
+
+[node name="OpcoesConexao" parent="." instance=ExtResource( 3 )]
+margin_left = 5.47925
+margin_top = 532.752
+margin_right = 280.479
+margin_bottom = 592.752
+rect_min_size = Vector2( 275, 60 )
+focus_mode = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+toggle_mode = true
+enabled_focus_mode = 0
+text = "Opções"
+flat = false
+script = ExtResource( 5 )
+mouse_over = Color( 0.501961, 0.501961, 0.501961, 1 )
+[connection signal="text_changed" from="IP_Porta/IP/IP" to="." method="_on_IP_text_changed"]
+[connection signal="text_changed" from="IP_Porta/Porta/Porta" to="." method="_on_Porta_text_changed"]
 [connection signal="text_changed" from="VBoxContainer/HBoxContainer/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer2/CriarServer" to="VBoxContainer/HBoxContainer2/CriarServer" method="_on_CriarServer_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer2/CriarServer" to="VBoxContainer/HBoxContainer2/CriarServer" method="_on_CriarServer_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/CriarServer" to="." method="_on_CriarServer_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer2/Comecar" to="VBoxContainer/HBoxContainer2/Comecar" method="_on_Comecar_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/HBoxContainer2/Comecar" to="VBoxContainer/HBoxContainer2/Comecar" method="_on_Comecar_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/Comecar" to="." method="_on_Comecar_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer2/Volta" to="VBoxContainer/HBoxContainer2/Volta" method="_on_Volta_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/HBoxContainer2/Volta" to="VBoxContainer/HBoxContainer2/Volta" method="_on_Volta_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/Volta" to="VBoxContainer/HBoxContainer2/Volta" method="_on_Volta_pressed"]
+[connection signal="toggled" from="OpcoesConexao" to="." method="_on_OpcoesConexao_toggled"]

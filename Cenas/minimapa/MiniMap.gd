@@ -31,7 +31,7 @@ func _ready():
 		new_marker.show()
 		markers[item] = new_marker
 
-func _process(delta):
+func _process(delta):	
 	# If no player is assigned, do nothing.
 	if !player:
 		return

@@ -76,3 +76,8 @@ shadow_enabled = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource( 3 )
+
+[node name="RespawnTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_RespawnTimer_timeout"]
