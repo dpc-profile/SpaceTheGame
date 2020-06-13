@@ -47,10 +47,12 @@ func _process(delta):
 #		$gem_target.visible = true
 #	else:
 #		$gem_target.visible = false
-	
-	if get_tree().is_network_server():
-		Network.update_position(int(name), position)
-		
+
+	if Network.MULTIPLAYER_ON:
+		if get_tree().is_network_server():
+			Network.update_position(int(name), position)
+
+
 func _olhe_para_mouse():
 	look_at(get_global_mouse_position())
 	rotation_degrees = rotation_degrees + 90
