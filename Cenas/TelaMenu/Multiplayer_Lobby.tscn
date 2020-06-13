@@ -93,11 +93,7 @@ margin_top = 423.322
 margin_right = 107.176
 margin_bottom = 423.322
 
-<<<<<<< HEAD
 [node name="ComecarPartida" parent="VBoxContainer" instance=ExtResource( 2 )]
-=======
-[node name="MenuButton" parent="VBoxContainer" instance=ExtResource( 2 )]
->>>>>>> Update Multiplayer
 flat = false
 
 [node name="Label" type="Label" parent="VBoxContainer"]
@@ -125,9 +121,6 @@ custom_fonts/normal_font = SubResource( 2 )
 [node name="RefreshPlayers" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
-<<<<<<< HEAD
 [connection signal="pressed" from="VBoxContainer/ComecarPartida" to="." method="_on_ComecarPartida_pressed"]
 [connection signal="pressed" from="VBoxContainer/Sair" to="." method="_on_Sair_pressed"]
-=======
->>>>>>> Update Multiplayer
 [connection signal="timeout" from="RefreshPlayers" to="." method="_on_RefreshPlayers_timeout"]
