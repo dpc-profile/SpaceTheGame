@@ -45,8 +45,10 @@ func _on_CriarServer_pressed():
 	_load_game()
 
 func _load_game():
-	get_tree().change_scene("res://Cenas/TelaMenu/Multiplayer_Lobby.tscn")
-	#get_tree().change_scene("res://Cenas/Mapa_Captura_Bandeira.tscn")
+	if Network.MULTIPLAYER_ON:
+		get_tree().change_scene("res://Cenas/TelaMenu/Multiplayer_Lobby.tscn")
+	else:
+		get_tree().change_scene("res://Cenas/Mapa_Captura_Bandeira.tscn")
 
 
 func _on_IP_text_changed(new_text):

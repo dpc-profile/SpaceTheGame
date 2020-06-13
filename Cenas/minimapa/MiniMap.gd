@@ -16,6 +16,10 @@ var markers = {}  # Dictionary of object: marker.
 
 
 func _ready():
+	#Mesmo se o NodePath não tiver vinculado com o player,
+	#essa linha faz o minimapa enxergar o player
+	player = '../../player2'
+	
 	var a = 5
 	if a in range(6, 10):
 		print("in")

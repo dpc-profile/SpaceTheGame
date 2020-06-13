@@ -1,6 +1,6 @@
 extends Node2D
 onready var timer = get_node("Timer")
-var segundos = 5
+var segundos = 3
 
 #Pressionar espaço para iniciar o timer
 func _process(delta):
