@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://imagens/Background/darkPurple.png" type="Texture" id=1]
 [ext_resource path="res://imagens/Objects/BGTile (3).png" type="Texture" id=2]
 [ext_resource path="res://Cenas/Torre.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Cenas/Mapa_Captura_Bandeira.gd" type="Script" id=4]
+[ext_resource path="res://Cenas/Enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Cenas/minimapa/MiniMap.tscn" type="PackedScene" id=6]
 
 [sub_resource type="GradientTexture" id=1]
@@ -63,7 +64,7 @@ points = PoolVector2Array( 256, 256, 0, 256, 0, 0, 256, 0 )
 [node name="Mapa_Captura_Bandeira" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="FundoMapa" type="Sprite" parent="."]
 position = Vector2( 768, 1024 )
 scale = Vector2( 12.4998, 13 )
 texture = ExtResource( 1 )
@@ -140,3 +141,9 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -200.0
 margin_bottom = 0.0
+
+[node name="Mob" parent="." instance=ExtResource( 5 )]
+position = Vector2( 470.32, 548.762 )
+
+[node name="Mob2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1107.07, 540.128 )

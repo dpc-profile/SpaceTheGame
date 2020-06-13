@@ -7,6 +7,9 @@ const spawn_down := Vector2(768, 2000)
 func _ready():
 		
 	if Network.MULTIPLAYER_ON:
+		#Quando o multiplayer é ativo ele mata os Mobs
+		$Mob.queue_free()
+		$Mob2.queue_free()
 		get_tree().connect('network_peer_disconnected', self, '_on_player_disconnected')
 		get_tree().connect('server_disconnected', self, '_on_server_disconnected')
 		
