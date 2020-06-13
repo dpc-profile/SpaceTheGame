@@ -23,3 +23,8 @@ func _on_ContinueButton_mouse_exited():
 #muda o tamanho	
 	set_scale(Vector2(1,1))
 	pass # Replace with function body.
+
+
+func _on_Sair_pressed():
+	get_tree().quit()
+	pass 

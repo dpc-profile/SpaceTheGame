@@ -1,10 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Músicas/Soundtrack/05 - Defy Gravity - Menion (online-audio-converter.com).wav" type="AudioStream" id=1]
+[ext_resource path="res://Cenas/MusicaDoMenu/Options.gd" type="Script" id=2]
 
-[node name="Node" type="Node"]
+[node name="menu_musica" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
-volume_db = -12.0
-autoplay = true
+bus = "Musica_Opc"
