@@ -6,7 +6,7 @@ var lineEdit = ""
 
 func _on_LineEdit_text_changed(new_text):
 	lineEdit = new_text
-	#Pega o que foi escrito no lineedit e setta ele no script 
+	#Pega o que foi escrito no lineedit e coloca no script 
 	#global pega_Nome.gd
 	get_node("/root/pega_Nome").player_Nome = lineEdit
 	
