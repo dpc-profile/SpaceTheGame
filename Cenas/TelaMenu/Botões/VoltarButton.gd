@@ -11,7 +11,7 @@ func _on_Volta_mouse_entered():
 func _on_Volta_mouse_exited():
 	
 	set_modulate(mouse_out)
-#muda o tamanho	
+	#muda o tamanho	
 	set_scale(Vector2(1,1))
 
 
