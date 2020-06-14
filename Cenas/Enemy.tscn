@@ -1,15 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://imagens/Image Sprites/spaceshippack13-SemFundo.png" type="Texture" id=1]
-[ext_resource path="res://imagens/luz/misterious.jpg" type="Texture" id=2]
+[ext_resource path="res://imagens/nave/nave_2_final.png" type="Texture" id=1]
+[ext_resource path="res://imagens/luz/around.png" type="Texture" id=2]
 [ext_resource path="res://Cenas/enemy.gd" type="Script" id=3]
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 61.975
-height = 51.1847
-
 [sub_resource type="OccluderPolygon2D" id=1]
-polygon = PoolVector2Array( -32.6644, -31.8379, -21.4259, -46.8226, -7.80344, -69.2997, 7.18127, -69.2997, 21.8254, -47.1632, 30.68, -29.7946, 24.8905, -13.7882, 40.5563, 18.2246, 0.370041, 83.953, -43.2218, 24.3547, -27.556, -13.4476 )
+polygon = PoolVector2Array( -59.5293, -44.1294, -43.9634, -43.6578, -40.6616, -33.2805, -18.0204, -13.4695, 0.375614, -31.3938, 15.9415, -16.2996, 40.4694, -30.9221, 43.2996, -42.7144, 59.3371, -44.1294, 61.2239, -32.3371, 57.4503, -13.4695, 48.0165, -11.5827, 41.8845, -16.2996, 22.5451, 1.15297, 45.1864, 2.56805, 37.6393, 13.8887, 14.9981, 11.0585, 6.9793, 17.6622, 12.1679, 19.0773, 17.3565, 38.8883, 15.9415, 55.3976, 8.86607, 57.2843, 1.319, 58.2277, -6.22807, 57.2843, -14.2468, 55.3976, -16.1336, 41.2468, -12.8318, 20.0207, -5.28469, 19.0773, -13.3035, 12.0019, -36.8881, 13.8887, -44.4351, 3.51145, -23.209, 3.51145, -42.0767, -16.2996, -45.3785, -12.0544, -56.6991, -12.0544, -61.8877, -28.0919 )
 
 [node name="Mob" type="KinematicBody2D" groups=[
 "minimap_objects",
@@ -22,28 +18,18 @@ collision_mask = 3
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 1 )
-region_enabled = true
 region_rect = Rect2( 24, 214, 133, 177 )
 
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
-
 [node name="Light2D" type="Light2D" parent="."]
-visible = false
-position = Vector2( -2.51001, -100.398 )
+position = Vector2( 0, -450 )
 rotation = 3.14159
 texture = ExtResource( 2 )
-offset = Vector2( 0, 512 )
-color = Color( 1, 0.615686, 0.615686, 1 )
-energy = 3.14
+texture_scale = 0.5
+color = Color( 0.984314, 0.466667, 0.427451, 0.639216 )
+energy = 1.5
 shadow_enabled = true
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-visible = false
-light_mask = 2
-occluder = SubResource( 1 )
-light_mask = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 modulate = Color( 0.45098, 0.870588, 0.529412, 1 )
@@ -56,3 +42,9 @@ percent_visible = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 0.191116, -30.5879, 15.8331, -14.9459, 41.4291, -31.2989, 41.4291, -31.2989, 44.2731, -42.6749, 59.2041, -44.0969, 60.6261, -28.4549, 57.0711, -13.5239, 47.8281, -11.3909, 42.8511, -16.3679, 22.2321, 2.11809, 44.9841, 2.82909, 37.8741, 13.4941, 14.4111, 11.3611, 5.87912, 17.7601, 12.8234, 19.345, 17.9661, 41.2231, 15.882, 55.7934, 10.2746, 57.0678, 2.88298, 58.0873, -6.03794, 57.5776, -10.8807, 56.8129, -14.704, 54.519, -15.7235, 39.9906, -12.1551, 20.6194, -3.36388, 19.1821, -13.3179, 12.0721, -36.0699, 14.2051, -43.8909, 4.9621, -22.5609, 3.5401, -41.0469, -15.6569, -44.6019, -11.3909, -56.6889, -12.1019, -60.2439, -27.7439, -58.8219, -43.3859, -43.1799, -42.6749, -40.3359, -32.7209, -17.5839, -13.5239 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 1 )

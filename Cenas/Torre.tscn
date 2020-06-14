@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://imagens/Image Sprites/sheet.png" type="Texture" id=1]
 [ext_resource path="res://Script/Torre.gd" type="Script" id=2]
@@ -8,6 +8,9 @@ radius = 52.8903
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 338.314
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( 46.1164, -2.25663, 36.5135, -28.1108, 26.9105, -36.975, 12.1367, -43.6232, -16.6722, -43.6232, -40.3102, -22.2012, -45.481, 1.43681, -38.0941, 25.8136, -21.1043, 39.8486, -1.15967, 45.7581, 18.0462, 40.5873, 32.0813, 30.9844, 36.5135, 25.8136, 39.4682, 21.3814, 41.6843, 18.4266, 43.1617, 13.2558, 43.9004, 6.60763 )
 
 [node name="Mob" type="KinematicBody2D" groups=[
 "minimap_objects",
@@ -36,6 +39,9 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Visão"]
 visible = false
 shape = SubResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 3 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Area_Visão" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area_Visão" to="." method="_on_Area2D_body_exited"]

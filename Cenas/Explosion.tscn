@@ -7,7 +7,6 @@
 [ext_resource path="res://imagens/Image Sprites/explosion1.png" type="Texture" id=5]
 [ext_resource path="res://script/Explosion.gd" type="Script" id=6]
 
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 4 ) ],
@@ -18,7 +17,7 @@ animations = [ {
 
 [node name="Explosion" type="AnimatedSprite"]
 frames = SubResource( 1 )
-frame = 3
+frame = 4
 speed_scale = 2.0
 playing = true
 script = ExtResource( 6 )
