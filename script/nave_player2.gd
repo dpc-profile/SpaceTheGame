@@ -11,11 +11,16 @@ export var friction = 0.65  #original 0.65, o atrito da nave??(atrito no espaço
 
 var vel = Vector2() #velocidade
 var acc = Vector2() #aceleração
+var gem = "live"
 
-#Gema
-var ghost_gem = preload("res://Cenas/ghost_gem.tscn") 
-var gem_droped 
+#instanciando Gema(bandeira)
+var gem_body = preload("res://Cenas/gem_body.tscn")
+var gem_droped
+ 
+#define o time do personagem
+var team = 1
 
+#pepara os tiros
 var bullet_cena = preload("res://Cenas/player_bullet.tscn")
 var can_fire = true
 var direcao = Vector2()
@@ -36,11 +41,11 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_z"):
 		morte_falsa()
 	#Renan: Oculta ou mostra a gema ao lado da barra de vida
-#	var gem_target = $"/root/global".collected
-#	if(gem_target==true):
-#		$gem_target.visible = true
-#	else:
-#		$gem_target.visible = false
+	var gem_target = Global.collected
+	if(gem_target==true and Global.pickable_gem):
+		$gem_target.visible = true
+	else:
+		$gem_target.visible = false
 
 #Coloca o Nickname no Player
 	$GUI/NickName.text = get_node("/root/pega_Nome").player_Nome
@@ -84,9 +89,11 @@ func game_over():
 
 func morte_falsa():
 	#instancia a gema com base na posição atual do player
-		var gem = ghost_gem.instance()
-		#gem.global_position = $ghost_gem.global_position
-		get_tree().root.add_child(gem)
+		var body = gem_body.instance()
+		body.global_position = $gem_drop.global_position
+		get_tree().root.add_child(body)
 		#Oculta as indicações da bandeira
 		gem_droped = false
-		$"/root/global".collected_gem(gem_droped)
+		Global.status = gem
+		Global.collected_gem(gem_droped)
+		Global.ellegible_pickable(false)

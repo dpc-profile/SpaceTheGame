@@ -8,10 +8,12 @@
 [ext_resource path="res://Cenas/Torre.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Cenas/ghost_gem.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Cenas/gui_gem.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Cenas/gui_gem.gd" type="Script" id=9]
+[ext_resource path="res://Script/gui_gem.gd" type="Script" id=9]
 [ext_resource path="res://Cenas/gem_home.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Cenas/gem_body.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Cenas/Mapa.gd" type="Script" id=12]
+[ext_resource path="res://Script/Mapa.gd" type="Script" id=12]
+
+
 
 [node name="Mapa" type="Node2D"]
 script = ExtResource( 12 )
