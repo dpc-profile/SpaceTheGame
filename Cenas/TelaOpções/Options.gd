@@ -22,9 +22,9 @@ func _ready():
 	
 	
 	#Pega o tamanho da tela e seleciona o botão que corresponde o numero
-	if(menu_musica.res_width == 1024 and menu_musica.res_height == 600):
+	if(menu_musica.res_largura == 1024 and menu_musica.res_altura == 600):
 		$Cntrl_video/btn_resulucao.select(0)
-	elif(menu_musica.res_width == 1920 and menu_musica.res_height == 1080):
+	elif(menu_musica.res_largura == 1920 and menu_musica.res_altura == 1080):
 		$Cntrl_video/btn_resulucao.select(1)
 		
 	if(menu_musica.fullscreen == false):
@@ -55,29 +55,31 @@ func Voltar():
 func Resolution(item):
 	match item:
 		0:
-			menu_musica.res_width = 1024
-			menu_musica.res_height = 600
-			menu_musica.resolution() 
+			menu_musica.res_largura = 1024
+			menu_musica.res_altura = 600
+			menu_musica.resolucao() 
 		1:
-			menu_musica.res_width = 1920
-			menu_musica.res_height = 1080
-			menu_musica.resolution() 
+			menu_musica.res_largura = 1920
+			menu_musica.res_altura = 1080
+			menu_musica.resolucao() 
 	pass
 	
 func Fullscreen(item):	
 	match item:
 		0:
 			menu_musica.fullscreen = false
-			menu_musica.resolution()
+			menu_musica.resolucao()
 		1:
 			menu_musica.fullscreen = true
-			menu_musica.resolution()
+			menu_musica.resolucao()
 			
 	pass
 
 
-
+#volume da musica
 func _on_sldr_musica_value_changed(value):
 	AudioServer.set_bus_volume_db(1, value)
-	
-	pass # Replace with function body.
+	if value == -34:
+		AudioServer.set_bus_mute(1,true)
+	else: 
+		AudioServer.set_bus_mute(1,false)

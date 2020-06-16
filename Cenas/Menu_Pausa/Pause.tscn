@@ -1,0 +1,135 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Cenas/Menu_Pausa/Pause.gd" type="Script" id=1]
+[ext_resource path="res://Fontes/Boldness.otf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+font_data = ExtResource( 2 )
+
+[node name="Pause" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 406.0
+margin_top = 138.0
+margin_right = -406.0
+margin_bottom = -158.0
+color = Color( 0.141176, 0.0941176, 0.0941176, 0.678431 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 480.184
+margin_top = 190.0
+margin_right = 540.184
+margin_bottom = 221.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 1 )
+text = "MENU"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -89.5
+margin_top = -110.0
+margin_right = 89.5
+margin_bottom = 133.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 37.0
+margin_top = 78.0
+margin_right = 142.0
+margin_bottom = 164.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continuar" type="Button" parent="CenterContainer/VBoxContainer"]
+pause_mode = 2
+margin_left = 2.0
+margin_right = 102.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 100, 20 )
+size_flags_horizontal = 4
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 2 )
+text = "Contunuar"
+flat = true
+
+[node name="Opcoes" type="Button" parent="CenterContainer/VBoxContainer"]
+pause_mode = 2
+margin_left = 2.0
+margin_top = 30.0
+margin_right = 102.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 100, 20 )
+size_flags_horizontal = 4
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 3 )
+text = "Opções"
+flat = true
+
+[node name="Sair_do_jogo" type="Button" parent="CenterContainer/VBoxContainer"]
+pause_mode = 2
+margin_top = 60.0
+margin_right = 105.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 100, 20 )
+size_flags_horizontal = 4
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 4 )
+text = "Sair do Jogo"
+flat = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_top = 50.0
+margin_right = 246.0
+margin_bottom = 102.0
+custom_fonts/normal_font = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="RichTextLabel"]
+autostart = true
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Continuar" to="." method="_on_Continuar_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Opcoes" to="." method="_on_Opcoes_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Sair_do_jogo" to="." method="_on_Sair_do_jogo_pressed"]
+[connection signal="timeout" from="RichTextLabel/Timer" to="." method="_on_Timer_timeout"]

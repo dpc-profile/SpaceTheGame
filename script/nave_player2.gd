@@ -81,6 +81,7 @@ func shoot():
 func recebendo_dano(dano):
 	$ProgressBar.value -= dano
 	if $ProgressBar.value <= 0:#Adicione ou remova "return", para impedir que o player morra
+		return
 		game_over()
 		
 func game_over():

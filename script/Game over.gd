@@ -6,7 +6,7 @@ var segundos = 3
 func _process(delta):
 	if(Input.is_action_just_pressed("ui_select")):
 		timer.start()
-	
+		
 	
 #Sempre que o timer acaba, diminui 1 no segundos até
 #entrar na condição do if e mudar de cena
