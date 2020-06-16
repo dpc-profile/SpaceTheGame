@@ -77,11 +77,10 @@ func shoot():
 	yield(get_tree().create_timer(fire_rate),"timeout")
 	can_fire = true
 
-#remova o return para quando o hp do player zerar dar game_over
+
 func recebendo_dano(dano):
 	$ProgressBar.value -= dano
-	if $ProgressBar.value <= 0:
-		return
+	if $ProgressBar.value <= 0:#Adicione ou remova "return", para impedir que o player morra
 		game_over()
 		
 func game_over():

@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="ProgressBar" type="ProgressBar"]
+self_modulate = Color( 0, 1, 0.109804, 1 )
+margin_left = -61.8113
+margin_top = 76.9189
+margin_right = 61.1887
+margin_bottom = 96.9189
+value = 100.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}

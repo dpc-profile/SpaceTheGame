@@ -23,7 +23,7 @@ wait_time = 0.5
 autostart = true
 
 [node name="bullet_point_enemy" type="Position2D" parent="."]
-position = Vector2( 46.761, 0 )
+position = Vector2( 74.761, 0 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
