@@ -30,6 +30,7 @@ Global="*res://global.gd"
 pega_Nome="*res://Scripts Globais/pega_Nome.gd"
 Network="*res://Scripts Globais/Network.gd"
 menu_musica="*res://Cenas/MusicaDoMenu/menu_musica.tscn"
+pega_tempo="*res://Scripts Globais/pega_tempo.gd"
 
 [display]
 

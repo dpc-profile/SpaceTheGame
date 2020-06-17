@@ -81,16 +81,23 @@ func shoot():
 func recebendo_dano(dano):
 	$ProgressBar.value -= dano
 	if $ProgressBar.value <= 0:#Adicione ou remova "return", para impedir que o player morra
-		return
+		
 		game_over()
 		
+		
 func game_over():
+	morte_falsa()
 	get_tree().change_scene("res://Cenas/Game_over.tscn")
+	
+func vitoria():
+	morte_falsa()
+	get_tree().change_scene("res://Cenas/Cena_vitoria/vitoria.tscn")	
 
+	
 func morte_falsa():
 	#instancia a gema com base na posição atual do player
 		var body = gem_body.instance()
-		body.global_position = $gem_drop.global_position
+		body.global_position = Vector2(767, 35)
 		get_tree().root.add_child(body)
 		#Oculta as indicações da bandeira
 		gem_droped = false

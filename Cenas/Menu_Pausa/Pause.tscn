@@ -118,18 +118,18 @@ custom_fonts/font = SubResource( 4 )
 text = "Sair do Jogo"
 flat = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Tempo_menu" type="RichTextLabel" parent="."]
 margin_top = 50.0
-margin_right = 246.0
-margin_bottom = 102.0
+margin_right = 363.0
+margin_bottom = 327.0
 custom_fonts/normal_font = SubResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Timer" type="Timer" parent="RichTextLabel"]
+[node name="Timer" type="Timer" parent="Tempo_menu"]
 autostart = true
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Continuar" to="." method="_on_Continuar_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Opcoes" to="." method="_on_Opcoes_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Sair_do_jogo" to="." method="_on_Sair_do_jogo_pressed"]
-[connection signal="timeout" from="RichTextLabel/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Tempo_menu/Timer" to="." method="_on_Timer_timeout"]

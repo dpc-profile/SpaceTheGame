@@ -136,7 +136,7 @@ position = Vector2( 783.643, 2007.73 )
 team = 1
 
 [node name="player2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 767.239, 2001.26 )
+position = Vector2( 523.028, 2013.89 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

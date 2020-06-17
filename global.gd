@@ -20,3 +20,4 @@ func kill_gem_body():
 #define se a bandeira pode ser coletada
 func ellegible_pickable(pickable):
 	pickable_gem = pickable
+

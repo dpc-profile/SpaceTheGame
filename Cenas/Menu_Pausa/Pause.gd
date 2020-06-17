@@ -1,19 +1,7 @@
 extends Control
 
-
-
 var segundos = 0
 var minutos = 0 
-
-
-
-
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 
 #Apertar ESC para pausar o jogo
 func _process(delta):
@@ -49,9 +37,10 @@ func _on_Sair_do_jogo_pressed():
 
 func _on_Timer_timeout():
 	segundos += 1
-	get_node("RichTextLabel").set_text("Tempo de jogo: "+ str(minutos)+" : "+ str(segundos))
+	pega_tempo.pega_seg = segundos
+	get_node("Tempo_menu").set_text("Tempo de jogo:\n" + str(segundos) + " Segundos\n" + str(minutos) + " Minutos")
 	if segundos == 60:
 		minutos +=01
-		
+		pega_tempo.pega_min = minutos
 		segundos = 0
 	pass # Replace with function body.
