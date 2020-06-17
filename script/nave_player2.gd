@@ -35,6 +35,9 @@ func _process(delta):
 	_mova_para_mouse(delta)
 	Global.player_global_pos = global_position
 	
+	if Global.vitoria == true:
+		vitoria()
+		
 	if Input.is_action_pressed("mouse_left") and can_fire:
 		shoot()
 	#Renan: Solta a Gema, trocar pela morte depois
@@ -104,3 +107,4 @@ func morte_falsa():
 		Global.status = gem
 		Global.collected_gem(gem_droped)
 		Global.ellegible_pickable(false)
+		Global.vitoria = false

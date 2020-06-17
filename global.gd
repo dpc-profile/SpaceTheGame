@@ -5,6 +5,7 @@ var status
 var gem = "die"
 var pickable_gem
 var gem_holder
+var vitoria = false
 
 #recebe a posição global do nave_player2
 var player_global_pos
@@ -20,4 +21,7 @@ func kill_gem_body():
 #define se a bandeira pode ser coletada
 func ellegible_pickable(pickable):
 	pickable_gem = pickable
+
+func ganhou(verificar):
+	vitoria = verificar
 
