@@ -14,14 +14,14 @@ var acc = Vector2() #aceleração
 var gem = "live"
 
 #instanciando Gema(bandeira)
-var gem_body = preload("res://Cenas/gem_body.tscn")
+var gem_body = preload("res://Cenas/Gem/gem_body.tscn")
 var gem_droped
  
 #define o time do personagem
 var team = 1
 
 #pepara os tiros
-var bullet_cena = preload("res://Cenas/player_bullet.tscn")
+var bullet_cena = preload("res://Cenas/Player/player_bullet.tscn")
 var can_fire = true
 var direcao = Vector2()
 
@@ -83,8 +83,8 @@ func shoot():
 
 func recebendo_dano(dano):
 	$ProgressBar.value -= dano
-	if $ProgressBar.value <= 0:#Adicione ou remova "return", para impedir que o player morra
-		
+	if $ProgressBar.value <= 0:
+		return
 		game_over()
 		
 		

@@ -2,7 +2,7 @@ extends KinematicBody2D
 #class_name Mob
 
 signal removed
-var cena_bala = preload("res://Cenas/tiroInimigo.tscn")
+var cena_bala = preload("res://Cenas/Enemys/tiroInimigo.tscn")
 var speed = 100
 var mov = Vector2(0,0)
 var minimap_icon = "mob"
@@ -27,16 +27,6 @@ func dead():
 	#Remover o enemy do minimapa
 	emit_signal("removed", self)
 	queue_free()
-	#Esconde o inimigo ou player da cena,
-	#Usado pra situação de respawn
-#	set_physics_process(false)
-#	for child in get_children():
-#		if child.has_method('hide'):
-#			child.hide()
-#	$CollisionPolygon2D.disabled = true
-#	global_position = Vector2(-1000, 0)
-
-
 
 func _on_Visao_body_entered(body):
 	if body.is_in_group("player1"):

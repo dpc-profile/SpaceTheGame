@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://imagens/gema/gem_base.png" type="Texture" id=1]
-[ext_resource path="res://Script/gem_spawn.gd" type="Script" id=2]
+[ext_resource path="res://Cenas/Gem/gem_spawn.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 19.9955
+radius = 51.6746
 
 [node name="gem_spawn" type="Area2D"]
 script = ExtResource( 2 )

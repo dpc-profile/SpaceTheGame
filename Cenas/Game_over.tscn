@@ -8,7 +8,7 @@
 size = 65
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=2]
 size = 35
 font_data = ExtResource( 1 )
 
@@ -60,7 +60,7 @@ margin_top = 215.0
 margin_right = 1027.0
 margin_bottom = 251.0
 size_flags_horizontal = 5
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 2 )
 align = 1
 valign = 1
 __meta__ = {

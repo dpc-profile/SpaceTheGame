@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://script/player_bullet.gd" type="Script" id=1]
+[ext_resource path="res://Cenas/Player/player_bullet.gd" type="Script" id=1]
 [ext_resource path="res://imagens/Sprite_separado/sheet.laserBlue16.atlastex" type="Texture" id=2]
 [ext_resource path="res://imagens/luz/ocal.jpg" type="Texture" id=3]
+
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.80876

@@ -8,15 +8,15 @@
 size = 65
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=2]
 size = 35
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=3]
 size = 40
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=4]
 size = 35
 font_data = ExtResource( 2 )
 
@@ -60,7 +60,7 @@ margin_top = 215.0
 margin_right = 1027.0
 margin_bottom = 251.0
 size_flags_horizontal = 5
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 2 )
 align = 1
 valign = 1
 __meta__ = {
@@ -74,7 +74,7 @@ margin_left = 939.525
 margin_top = 546.785
 margin_right = 962.525
 margin_bottom = 582.785
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 3 )
 text = "3"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -85,7 +85,7 @@ margin_left = -771.525
 margin_top = -98.7847
 margin_right = -36.525
 margin_bottom = -67.7847
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 4 )
 text = "Pressione \"Espaço\" para dar respawn"
 align = 1
 valign = 1

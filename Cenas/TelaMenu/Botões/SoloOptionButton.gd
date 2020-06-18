@@ -21,5 +21,4 @@ func _on_SoloOptionButton_mouse_exited():
 
 
 func _on_SoloOptionButton_pressed():
-	Network.MULTIPLAYER_ON = false
 	get_tree().change_scene("res://Cenas/TelaMenu/Tela_Nome.tscn")

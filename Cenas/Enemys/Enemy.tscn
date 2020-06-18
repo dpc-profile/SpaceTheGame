@@ -2,16 +2,16 @@
 
 [ext_resource path="res://imagens/nave/nave_2_final.png" type="Texture" id=1]
 [ext_resource path="res://imagens/luz/around.png" type="Texture" id=2]
-[ext_resource path="res://Cenas/Enemy.gd" type="Script" id=3]
+[ext_resource path="res://Cenas/Enemys/enemy.gd" type="Script" id=3]
 [ext_resource path="res://Cenas/GUI_Player/ProgressBar.tscn" type="PackedScene" id=4]
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=1]
 radius = 66.8531
 
-[sub_resource type="OccluderPolygon2D" id=1]
+[sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( -59.5293, -44.1294, -43.9634, -43.6578, -40.6616, -33.2805, -18.0204, -13.4695, 0.375614, -31.3938, 15.9415, -16.2996, 40.4694, -30.9221, 43.2996, -42.7144, 59.3371, -44.1294, 61.2239, -32.3371, 57.4503, -13.4695, 48.0165, -11.5827, 41.8845, -16.2996, 22.5451, 1.15297, 45.1864, 2.56805, 37.6393, 13.8887, 14.9981, 11.0585, 6.9793, 17.6622, 12.1679, 19.0773, 17.3565, 38.8883, 15.9415, 55.3976, 8.86607, 57.2843, 1.319, 58.2277, -6.22807, 57.2843, -14.2468, 55.3976, -16.1336, 41.2468, -12.8318, 20.0207, -5.28469, 19.0773, -13.3035, 12.0019, -36.8881, 13.8887, -44.4351, 3.51145, -23.209, 3.51145, -42.0767, -16.2996, -45.3785, -12.0544, -56.6991, -12.0544, -61.8877, -28.0919 )
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=3]
 radius = 669.926
 
 [node name="Mob" type="KinematicBody2D" groups=[
@@ -31,7 +31,6 @@ region_rect = Rect2( 24, 214, 133, 177 )
 
 [node name="BulletPointEnemy" type="Position2D" parent="."]
 position = Vector2( 0, -80 )
-scale = Vector2( 1, 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
 position = Vector2( 0, -450 )
@@ -45,15 +44,15 @@ shadow_enabled = true
 [node name="ProgressBar" parent="." instance=ExtResource( 4 )]
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource( 1 )
+occluder = SubResource( 2 )
 
 [node name="Visao" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Visao"]
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="FireRate" type="Timer" parent="."]
 autostart = true
