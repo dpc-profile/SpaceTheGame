@@ -212,10 +212,10 @@ margin_bottom = 443.0
 
 [node name="Popup" type="Popup" parent="Control"]
 visible = true
-margin_left = -424.568
-margin_top = -379.964
-margin_right = 533.432
-margin_bottom = 147.036
+margin_left = -423.171
+margin_top = -379.266
+margin_right = 534.829
+margin_bottom = 147.734
 script = ExtResource( 18 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -236,8 +236,10 @@ scale = Vector2( 0.70729, 0.590469 )
 texture = ExtResource( 19 )
 
 [node name="ToolButton" type="ToolButton" parent="Control"]
-margin_right = 12.0
-margin_bottom = 22.0
+margin_left = -10.0885
+margin_top = -11.872
+margin_right = 130.912
+margin_bottom = 34.128
 text = "Tutorial"
 __meta__ = {
 "_edit_use_anchors_": false

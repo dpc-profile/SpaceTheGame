@@ -32,3 +32,6 @@ func _on_Tuto_pressed():
 	elif	slide == 5:
 		tuto_sprite.set_texture(tuto6)
 		slide = slide + 1
+	elif slide == 6:
+		tuto_sprite.set_texture(tuto1)
+		slide = 1
