@@ -6,7 +6,7 @@ var velx = 60
 var dentro_area = false
 
 var hp = 60
-var disable = false #Se refere a propria torre
+var disable = false
 
 var minimap_icon="mob"
 

@@ -10,8 +10,7 @@ var na_area = false
 func _physics_process(delta):
 	mov.x = speed
 	if Global.player_global_pos != null:
-		look_at(Global.player_global_pos)	
-	#Rotation_degress gira toda a cena
+		look_at(Global.player_global_pos)
 	rotation_degrees = rotation_degrees + 90
 	mov = mov.rotated(rotation-45)
 	mov = move_and_slide(mov)
@@ -23,7 +22,7 @@ func recebendo_dano(damage):
 		dead()
 
 func dead():
-	#Remover o enemy do minimapa
+	#Remover a nave inimiga do minimapa e da cena
 	emit_signal("removed", self)
 	queue_free()
 

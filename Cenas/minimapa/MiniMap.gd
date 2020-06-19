@@ -1,18 +1,18 @@
 extends MarginContainer
 
 export (NodePath) var player  #Linka com o player
-export var zoom = 1.5 setget set_zoom # Scale multiplier.
+export var zoom = 1.5 setget set_zoom 
 
-# Node references.
+
 onready var grid = $MarginContainer/Grid
 onready var player_marker = $MarginContainer/Grid/PlayerMarker
 onready var mob_marker = $MarginContainer/Grid/MobMarker
 onready var alert_marker = $MarginContainer/Grid/AlertMarker
-# Link object icon setting to Sprite marker.
+#Liga os objetos com as marcação, se guiando por "icons" 
 onready var icons = {"mob": mob_marker, "alert": alert_marker}
 
-var grid_scale  # Calculated world to map scale.
-var markers = {}  # Dictionary of object: marker.
+var grid_scale
+var markers = {} 
 
 
 func _ready():
@@ -20,14 +20,11 @@ func _ready():
 	#essa linha faz o minimapa enxergar o player
 	player = '../../player2'
 	
-	var a = 5
-	if a in range(6, 10):
-		print("in")
-	# Center the player marker in the grid.
+	#Sentraliza a marcação do player
 	player_marker.position = grid.rect_size / 2
-	# Find the scale factor for marker placement.
+	#Ajusta a escala dos marcadores
 	grid_scale = grid.rect_size / (get_viewport_rect().size * zoom)
-	# Create markers for all objects.
+	#Marca todos os objetos
 	var map_objects = get_tree().get_nodes_in_group("minimap_objects")
 	for item in map_objects:
 		var new_marker = icons[item.minimap_icon].duplicate()
@@ -35,22 +32,18 @@ func _ready():
 		new_marker.show()
 		markers[item] = new_marker
 
-func _process(delta):	
-	# If no player is assigned, do nothing.
+func _process(delta):
 	if !player:
 		return
-	# Arrow texture points upwards, so add 90 degrees.
+	#Sincroniza a seta com o player
 	player_marker.rotation = get_node(player).rotation + PI/108
 	for item in markers:
 		var obj_pos = (item.position - get_node(player).position) * grid_scale + grid.rect_size / 2
-		# If marker is outside grid, hide or shrink it.
+		#Ajusta as marcações para ficarem dentro do minimapa
 		if grid.get_rect().has_point(obj_pos + grid.rect_position):
 			markers[item].scale = Vector2(1, 1)
-#			markers[item].show()
 		else:
 			markers[item].scale = Vector2(0.75, 0.75)
-#			markers[item].hide()
-		# Don't draw markers outside grid rectangle.
 		obj_pos.x = clamp(obj_pos.x, 0, grid.rect_size.x)
 		obj_pos.y = clamp(obj_pos.y, 0, grid.rect_size.y)
 		markers[item].position = obj_pos

@@ -5,7 +5,8 @@ export (Color, RGB) var mouse_over
 var lineEdit = ""
 
 func _on_LineEdit_text_changed(new_text):
-	lineEdit = new_text
+	if lineEdit.length() < 12:
+		lineEdit = new_text
 
 
 func _on_Comecar_pressed():

@@ -1,7 +1,5 @@
 extends Control
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	#Botões do menu
 	$btn_video.connect("pressed", self, "Video")
@@ -12,9 +10,9 @@ func _ready():
 	$Cntrl_video/btn_fullscreen.connect("item_selected",self, "Fullscreen")
 	#Opções de resolução de tela
 	$Cntrl_video/btn_resulucao.add_item("1024 x 600", 0)
-	$Cntrl_video/btn_resulucao.add_item("1920 x 1080", 1)	
+	$Cntrl_video/btn_resulucao.add_item("1920 x 1080", 1)
 	$Cntrl_video/btn_fullscreen.add_item("Modo janela", 0)
-	$Cntrl_video/btn_fullscreen.add_item("Tela cheia", 1)	
+	$Cntrl_video/btn_fullscreen.add_item("Tela cheia", 1)
 	
 	$Cntrl_video.show()
 	$Cntrl_audio.hide()

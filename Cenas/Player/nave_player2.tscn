@@ -27,6 +27,10 @@ texture = ExtResource( 3 )
 region_rect = Rect2( 314, 456, 101, 77 )
 
 [node name="GUI" parent="." instance=ExtResource( 5 )]
+margin_left = -58.3382
+margin_top = 67.6763
+margin_right = 61.6618
+margin_bottom = 107.676
 
 [node name="gem_target" type="Sprite" parent="."]
 visible = false

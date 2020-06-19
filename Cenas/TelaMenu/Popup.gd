@@ -10,9 +10,6 @@ var slide = 1
 
 onready var tuto_sprite = get_node("Tuto/imagem")
 
-func _ready():
-	pass # Replace with function body.
-
 func _on_ToolButton_pressed():
 	popup()
 

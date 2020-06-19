@@ -9,44 +9,40 @@ var vel = Vector2() #velocidade
 var acc = Vector2() #aceleração
 var gem = "live"
 
-#instanciando Gema(bandeira)
 var gem_body = preload("res://Cenas/Gem/gem_body.tscn")
 var gem_droped
  
 #define o time do personagem
 var team = 1
 
-#pepara os tiros
 var bullet_cena = preload("res://Cenas/Player/player_bullet.tscn")
 var can_fire = true
 var direcao = Vector2()
 
-#Renan: função para setar a gema como invisivel
 func _ready():
+	$GUI/NickName.text = pega_Nome.player_Nome #Coloca o Nickname no Player
 	add_to_group("player1")
 	$gem_target.visible = false
-	
-func _process(delta):
+
+func _physics_process(delta):
 	_olhe_para_mouse()
 	_mova_para_mouse(delta)
 	Global.player_global_pos = global_position
-	
+	if Input.is_action_pressed("mouse_left") and can_fire:
+		shoot()
+
+func _process(delta):	
 	if Global.vitoria == true:
 		vitoria()
 		
-	if Input.is_action_pressed("mouse_left") and can_fire:
-		shoot()
-	#Renan: Solta a Gema, trocar pela morte depois
-	if Input.is_action_just_pressed("ui_z"):
-		redefinir()
 	#Renan: Oculta ou mostra a gema ao lado da barra de vida
 	var gem_target = Global.collected
 	if(gem_target==true and Global.pickable_gem):
 		$gem_target.visible = true
 	else:
 		$gem_target.visible = false
-	#Coloca o Nickname no Player
-	$GUI/NickName.text = get_node("/root/pega_Nome").player_Nome
+	
+	
 
 func _olhe_para_mouse():
 	look_at(get_global_mouse_position())
