@@ -1,5 +1,4 @@
 extends KinematicBody2D
-#class_name Mob
 
 signal removed
 var cena_bala = preload("res://Cenas/Enemys/tiroInimigo.tscn")

@@ -11,7 +11,7 @@ func _process(delta):
 	get_node("VBoxContainer/Tempo").set_text("Tempo de jogo:\n"+ str(tempo_seg)+ " Segundos\n" + str(tempo_min) + "Minutos")
 	
 #Sempre que o timer acaba, diminui 1 no segundos até
-#entrar na condição do if e mudar de cena
+#entrar na condição if e mudar de cena
 func _on_Timer_timeout():
 		segundos -= 1
 		get_node("Contador").set_text(str(segundos))

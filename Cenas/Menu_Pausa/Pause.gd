@@ -8,31 +8,22 @@ func _process(delta):
 	if(Input.is_action_just_pressed("Pausar")):
 		get_tree().paused = not get_tree().paused
 		visible = not visible
-	
-	pass
 
 #Continua o jogo da onde parou
 func _on_Continuar_pressed():
 	get_tree().paused = not get_tree().paused
 	visible = not visible
-	
-	pass # Replace with function body.
 
 
 
 func _on_Opcoes_pressed():
 	get_node("/root/menu_musica/")
-	pass # Replace with function body.
 
 
 
 #Sair do jogo
 func _on_Sair_do_jogo_pressed():
 	get_tree().quit()
-	pass # Replace with function body.
-
-
-
 
 
 func _on_Timer_timeout():
@@ -43,4 +34,3 @@ func _on_Timer_timeout():
 		minutos +=01
 		pega_tempo.pega_min = minutos
 		segundos = 0
-	pass # Replace with function body.

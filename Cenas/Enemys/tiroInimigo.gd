@@ -1,9 +1,8 @@
 extends Area2D
 export var dano = 20
 
-var explosion = preload("res://Cenas/Explosion.tscn")
+var explosion = preload("res://Cenas/Efeitos/Explosion.tscn")
 
-#Alterando o primeiro valor do Vector2, aumenta ou diminui a velocidade da bala
 func _process(delta):
 	translate(Vector2(10,0))
 

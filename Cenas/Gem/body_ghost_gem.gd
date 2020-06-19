@@ -2,10 +2,9 @@ extends KinematicBody2D
 class_name Alert
 signal removed
 var minimap_icon="alert"
+
 #controle do momento de movimentar
 var move = false
-#variaveis para controle do movimento
-var mov = Vector2(0,0)
 var velx = 60
 
 func _process(delta):

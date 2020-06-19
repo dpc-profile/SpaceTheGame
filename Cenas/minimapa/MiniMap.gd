@@ -1,6 +1,6 @@
 extends MarginContainer
 
-export (NodePath) var player  # Link to Player node. If this is null, the map will not function.
+export (NodePath) var player  #Linka com o player
 export var zoom = 1.5 setget set_zoom # Scale multiplier.
 
 # Node references.
@@ -58,14 +58,14 @@ func _process(delta):
 	
 	
 func _on_object_removed(object):
-	# Removes a marker from the map. Connect to object's "removed" signal.
+	#Remove do minimapa os objetos, quando um objeto emite o sinal "removed"
 	if object in markers:
 		markers[object].queue_free()
 		markers.erase(object)
 
 
 func set_zoom(value):
-	# Adjust zoom value and recalculate scale.
+	#Ajusta o zoom e recalcula a escala
 	zoom = clamp(value, 0.5, 5)
 	grid_scale = grid.rect_size / (get_viewport_rect().size * zoom)
 	

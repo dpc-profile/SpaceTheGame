@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Músicas/Soundtrack/05 - Defy Gravity - Menion (online-audio-converter.com).wav" type="AudioStream" id=1]
+[ext_resource path="res://Musica/Soundtrack/05 - Defy Gravity - Menion (online-audio-converter.com).wav" type="AudioStream" id=1]
 [ext_resource path="res://Cenas/MusicaDoMenu/Options.gd" type="Script" id=2]
 
 [node name="menu_musica" type="Control"]

@@ -1,13 +1,9 @@
 extends KinematicBody2D
 
-
-#class_name Player
-#signal removed
 export var bullet_speed = 200 #original 200
 export var fire_rate = 0.4 #velocidade da cadencia de tiro
 export var thrust = 400   #força de impulso das turbunas da nave
-export var friction = 0.65  #original 0.65, o atrito da nave??(atrito no espaço?? REALY?????)
-#var minimap_icon="player"
+export var friction = 0.65  #original 0.65, o atrito da nave??(atrito no espaço??)
 
 var vel = Vector2() #velocidade
 var acc = Vector2() #aceleração
@@ -42,17 +38,16 @@ func _process(delta):
 		shoot()
 	#Renan: Solta a Gema, trocar pela morte depois
 	if Input.is_action_just_pressed("ui_z"):
-		morte_falsa()
+		redefinir()
 	#Renan: Oculta ou mostra a gema ao lado da barra de vida
 	var gem_target = Global.collected
 	if(gem_target==true and Global.pickable_gem):
 		$gem_target.visible = true
 	else:
 		$gem_target.visible = false
-
-#Coloca o Nickname no Player
+	#Coloca o Nickname no Player
 	$GUI/NickName.text = get_node("/root/pega_Nome").player_Nome
-		
+
 func _olhe_para_mouse():
 	look_at(get_global_mouse_position())
 	rotation_degrees = rotation_degrees + 90
@@ -88,16 +83,16 @@ func recebendo_dano(dano):
 
 
 func game_over():
-	morte_falsa()
+	redefinir()
 	get_tree().change_scene("res://Cenas/Cena_derrota/Game_over.tscn")
 	
 func vitoria():
-	morte_falsa()
+	redefinir()
 	get_tree().change_scene("res://Cenas/Cena_vitoria/vitoria.tscn")	
 
 	
-func morte_falsa():
-	#instancia a gema com base na posição atual do player
+func redefinir():
+	#Redefine a posição e os status da gema
 	var body = gem_body.instance()
 	body.global_position = Vector2(767, 35)
 	get_tree().root.add_child(body)

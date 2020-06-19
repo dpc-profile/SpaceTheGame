@@ -1,7 +1,6 @@
 extends Control
 
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Botões do menu
@@ -31,26 +30,19 @@ func _ready():
 		$Cntrl_video/btn_resulucao.select(0)
 	elif(menu_musica.fullscreen == true):
 		$Cntrl_video/btn_resulucao.select(1)	
-	
 
-
-		
 
 func Video():
 	$Cntrl_video.show()
 	$Cntrl_audio.hide()
 	
-	pass
-
 func Audio():
 	$Cntrl_video.hide()
 	$Cntrl_audio.show()
-	
-	pass	
 
 func Voltar():
-	
 	get_tree().change_scene("res://Cenas/TelaMenu/TitleScream.tscn")
+
 
 func Resolution(item):
 	match item:
@@ -62,8 +54,7 @@ func Resolution(item):
 			menu_musica.res_largura = 1920
 			menu_musica.res_altura = 1080
 			menu_musica.resolucao() 
-	pass
-	
+
 func Fullscreen(item):	
 	match item:
 		0:
@@ -72,8 +63,6 @@ func Fullscreen(item):
 		1:
 			menu_musica.fullscreen = true
 			menu_musica.resolucao()
-			
-	pass
 
 
 #volume da musica
