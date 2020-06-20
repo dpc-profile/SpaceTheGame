@@ -6,7 +6,7 @@ func _process(delta):
 	if(Input.is_action_just_pressed("Pausar")):
 		get_tree().paused = not get_tree().paused
 		visible = not visible
-		get_node("/root/menu_musica/Musica_CTF").play()
+		
 #Continua o jogo da onde parou
 func _on_Continuar_pressed():
 	get_tree().paused = not get_tree().paused

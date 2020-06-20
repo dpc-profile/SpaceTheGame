@@ -143,6 +143,22 @@ team = 1
 [node name="player2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 775.116, 1867.69 )
 
+[node name="Tempo_menu" type="RichTextLabel" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 1250.0
+margin_top = 1568.0
+margin_right = 1613.0
+margin_bottom = 1845.0
+custom_fonts/normal_font = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="Tempo_menu"]
+autostart = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MiniMap" parent="CanvasLayer" instance=ExtResource( 6 )]
@@ -162,19 +178,6 @@ position = Vector2( 1104.84, 738.572 )
 
 [node name="Alert" parent="." instance=ExtResource( 10 )]
 position = Vector2( 777.064, 38.0381 )
-
-[node name="Tempo_menu" type="RichTextLabel" parent="."]
-margin_left = 4.52203
-margin_top = 1.76508
-margin_right = 367.522
-margin_bottom = 278.765
-custom_fonts/normal_font = SubResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Timer" type="Timer" parent="Tempo_menu"]
-autostart = true
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
