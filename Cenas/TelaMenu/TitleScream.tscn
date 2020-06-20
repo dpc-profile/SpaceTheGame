@@ -33,7 +33,7 @@ void fragment(){
 shader = SubResource( 1 )
 shader_param/scroll_speed = null
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 size = 35
 font_data = ExtResource( 5 )
 
@@ -205,7 +205,7 @@ margin_left = 440.0
 margin_top = -1.284
 margin_right = 593.0
 margin_bottom = 51.716
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 text = "Tutorial"
 script = ExtResource( 13 )
 __meta__ = {

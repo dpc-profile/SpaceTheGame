@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Cenas/Menu_Pausa/Pause.gd" type="Script" id=1]
 [ext_resource path="res://Fontes/Boldness.otf" type="DynamicFontData" id=2]
@@ -11,19 +11,15 @@ font_data = ExtResource( 2 )
 size = 20
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=4]
-size = 20
-font_data = ExtResource( 2 )
-
 [sub_resource type="DynamicFont" id=3]
 size = 20
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=4]
+size = 20
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 25
 font_data = ExtResource( 2 )
 
 [node name="Pause" type="Control"]
@@ -105,7 +101,7 @@ margin_bottom = 56.0
 rect_min_size = Vector2( 100, 20 )
 size_flags_horizontal = 4
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "Sair do Jogo"
 flat = true
 
@@ -119,7 +115,7 @@ margin_bottom = 76.0
 rect_min_size = Vector2( 100, 20 )
 size_flags_horizontal = 4
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "Opções"
 flat = true
 
@@ -135,7 +131,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 margin_right = 46.0
 margin_bottom = 16.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 text = "Volume"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -146,20 +142,9 @@ margin_left = 50.0
 margin_right = 140.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
-
-[node name="Tempo_menu" type="RichTextLabel" parent="."]
-margin_top = 50.0
-margin_right = 363.0
-margin_bottom = 327.0
-custom_fonts/normal_font = SubResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Timer" type="Timer" parent="Tempo_menu"]
-autostart = true
+min_value = -34.0
+max_value = 0.0
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Continuar" to="." method="_on_Continuar_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Sair_do_jogo" to="." method="_on_Sair_do_jogo_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Opcoes" to="." method="_on_Opcoes_pressed"]
 [connection signal="value_changed" from="CenterContainer/VBoxContainer/HBoxContainer/HSlider" to="." method="_on_HSlider_value_changed"]
-[connection signal="timeout" from="Tempo_menu/Timer" to="." method="_on_Timer_timeout"]

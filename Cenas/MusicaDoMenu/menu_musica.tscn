@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Musica/Soundtrack/05 - Defy Gravity - Menion (online-audio-converter.com).wav" type="AudioStream" id=1]
 [ext_resource path="res://Cenas/MusicaDoMenu/Options.gd" type="Script" id=2]
+[ext_resource path="res://Musica/Soundtrack/y2mate.com - Heaven_T2-E2iH01rs (online-audio-converter.com).wav" type="AudioStream" id=3]
 
 [node name="menu_musica" type="Control"]
 margin_right = 40.0
@@ -13,4 +14,9 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
+bus = "Musica_Opc"
+
+[node name="Musica_CTF" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -24.233
 bus = "Musica_Opc"
