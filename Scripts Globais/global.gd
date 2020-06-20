@@ -7,6 +7,7 @@ var pickable_gem
 var gem_holder
 var vitoria = false
 
+
 #recebe a posição global do nave_player2
 var player_global_pos
 
@@ -24,3 +25,4 @@ func ellegible_pickable(pickable):
 
 func ganhou(verificar):
 	vitoria = verificar
+

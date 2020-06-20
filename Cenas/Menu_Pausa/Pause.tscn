@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Cenas/Menu_Pausa/Pause.gd" type="Script" id=1]
 [ext_resource path="res://Fontes/Boldness.otf" type="DynamicFontData" id=2]
@@ -11,12 +11,15 @@ font_data = ExtResource( 2 )
 size = 20
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 2 )
+
 [sub_resource type="DynamicFont" id=3]
 size = 20
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=4]
-size = 20
+[sub_resource type="DynamicFont" id=6]
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=5]
@@ -71,10 +74,10 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 37.0
-margin_top = 78.0
-margin_right = 142.0
-margin_bottom = 164.0
+margin_left = 19.0
+margin_top = 83.0
+margin_right = 159.0
+margin_bottom = 159.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 __meta__ = {
@@ -83,8 +86,8 @@ __meta__ = {
 
 [node name="Continuar" type="Button" parent="CenterContainer/VBoxContainer"]
 pause_mode = 2
-margin_left = 2.0
-margin_right = 102.0
+margin_left = 20.0
+margin_right = 120.0
 margin_bottom = 26.0
 rect_min_size = Vector2( 100, 20 )
 size_flags_horizontal = 4
@@ -93,12 +96,26 @@ custom_fonts/font = SubResource( 2 )
 text = "Contunuar"
 flat = true
 
+[node name="Sair_do_jogo" type="Button" parent="CenterContainer/VBoxContainer"]
+pause_mode = 2
+margin_left = 17.0
+margin_top = 30.0
+margin_right = 122.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 100, 20 )
+size_flags_horizontal = 4
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 4 )
+text = "Sair do Jogo"
+flat = true
+
 [node name="Opcoes" type="Button" parent="CenterContainer/VBoxContainer"]
 pause_mode = 2
+visible = false
 margin_left = 2.0
-margin_top = 30.0
+margin_top = 50.0
 margin_right = 102.0
-margin_bottom = 56.0
+margin_bottom = 76.0
 rect_min_size = Vector2( 100, 20 )
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -106,17 +123,29 @@ custom_fonts/font = SubResource( 3 )
 text = "Opções"
 flat = true
 
-[node name="Sair_do_jogo" type="Button" parent="CenterContainer/VBoxContainer"]
-pause_mode = 2
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 margin_top = 60.0
-margin_right = 105.0
-margin_bottom = 86.0
-rect_min_size = Vector2( 100, 20 )
-size_flags_horizontal = 4
-size_flags_vertical = 0
-custom_fonts/font = SubResource( 4 )
-text = "Sair do Jogo"
-flat = true
+margin_right = 140.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 140, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+margin_right = 46.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 6 )
+text = "Volume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 50.0
+margin_right = 140.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
 
 [node name="Tempo_menu" type="RichTextLabel" parent="."]
 margin_top = 50.0
@@ -130,6 +159,7 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="Tempo_menu"]
 autostart = true
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Continuar" to="." method="_on_Continuar_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Opcoes" to="." method="_on_Opcoes_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Sair_do_jogo" to="." method="_on_Sair_do_jogo_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Opcoes" to="." method="_on_Opcoes_pressed"]
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/HBoxContainer/HSlider" to="." method="_on_HSlider_value_changed"]
 [connection signal="timeout" from="Tempo_menu/Timer" to="." method="_on_Timer_timeout"]

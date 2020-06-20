@@ -30,6 +30,7 @@ pega_Nome="*res://Scripts Globais/pega_Nome.gd"
 menu_musica="*res://Cenas/MusicaDoMenu/menu_musica.tscn"
 pega_tempo="*res://Scripts Globais/pega_tempo.gd"
 Global="*res://Scripts Globais/global.gd"
+Options_in_game="*res://Cenas/Tela Opções_in_game/Options_in_game.tscn"
 
 [display]
 

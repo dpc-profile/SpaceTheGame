@@ -34,3 +34,14 @@ func _on_Timer_timeout():
 		minutos +=01
 		pega_tempo.pega_min = minutos
 		segundos = 0
+
+
+#Volume do som no jogo in game
+func _on_HSlider_value_changed(value):
+#	AudioServer.set_bus_volume_db(1, value)
+#	if value == -34:
+#		AudioServer.set_bus_mute(1,true)
+#	else: 
+#		AudioServer.set_bus_mute(1,false)
+	
+	pass # Replace with function body.
