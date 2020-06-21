@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Cenas/TelaMenu/Tela_Nome.gd" type="Script" id=1]
 [ext_resource path="res://Cenas/TelaMenu/Botões/ComecarButton.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Cenas/TelaMenu/Botões/ComecarButton.gd" type="Script" id=4]
 [ext_resource path="res://Cenas/TelaMenu/Botões/VoltarButton.gd" type="Script" id=5]
 [ext_resource path="res://Fontes/marcellus-sc.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Cenas/Fade_tela/Fade_telal.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -102,6 +103,8 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 enabled_focus_mode = 0
 script = ExtResource( 5 )
 mouse_over = Color( 0.501961, 0.501961, 0.501961, 1 )
+
+[node name="Control" parent="." instance=ExtResource( 7 )]
 [connection signal="text_changed" from="VBoxContainer/HBoxContainer/LineEdit" to="." method="_on_LineEdit_text_changed"]
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer2/Comecar" to="VBoxContainer/HBoxContainer2/Comecar" method="_on_Comecar_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/HBoxContainer2/Comecar" to="VBoxContainer/HBoxContainer2/Comecar" method="_on_Comecar_mouse_exited"]

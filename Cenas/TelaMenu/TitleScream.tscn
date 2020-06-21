@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Cenas/TelaMenu/Botões/OptionButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://imagens/Logo do Jogo/Logo.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Cenas/TelaMenu/Botao_tutorial.gd" type="Script" id=13]
 [ext_resource path="res://Cenas/TelaMenu/Botões/SoloOptionButton.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Cenas/TelaMenu/Botões/SoloOptionButton.gd" type="Script" id=15]
+[ext_resource path="res://Cenas/Fade_tela/Fade_telal.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Cenas/TelaMenu/Botões/VoltarEscolha.gd" type="Script" id=17]
 [ext_resource path="res://Cenas/TelaMenu/Popup.gd" type="Script" id=18]
 [ext_resource path="res://imagens/tutos/Tuto1.1.png" type="Texture" id=19]
@@ -80,33 +81,6 @@ stretch_mode = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="EscolhaModo" type="HBoxContainer" parent="."]
-visible = false
-margin_left = 327.508
-margin_top = 243.716
-margin_right = 687.508
-margin_bottom = 413.716
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="EscolhaModo"]
-margin_right = 360.0
-margin_bottom = 170.0
-
-[node name="SoloOptionButton" parent="EscolhaModo/VBoxContainer" instance=ExtResource( 14 )]
-margin_bottom = 51.0
-script = ExtResource( 15 )
-mouse_fora = Color( 1, 1, 1, 1 )
-mouse_dentro = Color( 1, 0, 0, 1 )
-
-[node name="VoltarButton" parent="EscolhaModo/VBoxContainer" instance=ExtResource( 12 )]
-margin_top = 55.0
-margin_bottom = 115.0
-script = ExtResource( 17 )
-mouse_fora = Color( 1, 1, 1, 1 )
-mouse_dentro = Color( 1, 0, 0, 1 )
 
 [node name="MainChoices" type="HBoxContainer" parent="."]
 anchor_left = 0.5
@@ -214,6 +188,33 @@ __meta__ = {
 mouse_fora = Color( 1, 1, 1, 1 )
 mouse_dentro = Color( 1, 0, 0, 1 )
 
+[node name="EscolhaModo" type="HBoxContainer" parent="."]
+visible = false
+margin_left = 327.508
+margin_top = 243.716
+margin_right = 687.508
+margin_bottom = 413.716
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EscolhaModo"]
+margin_right = 360.0
+margin_bottom = 170.0
+
+[node name="SoloOptionButton" parent="EscolhaModo/VBoxContainer" instance=ExtResource( 14 )]
+margin_bottom = 51.0
+script = ExtResource( 15 )
+mouse_fora = Color( 1, 1, 1, 1 )
+mouse_dentro = Color( 1, 0, 0, 1 )
+
+[node name="VoltarButton" parent="EscolhaModo/VBoxContainer" instance=ExtResource( 12 )]
+margin_top = 55.0
+margin_bottom = 115.0
+script = ExtResource( 17 )
+mouse_fora = Color( 1, 1, 1, 1 )
+mouse_dentro = Color( 1, 0, 0, 1 )
+
 [node name="Descrição" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
@@ -240,12 +241,8 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="mouse_entered" from="EscolhaModo/VBoxContainer/SoloOptionButton" to="EscolhaModo/VBoxContainer/SoloOptionButton" method="_on_SoloOptionButton_mouse_entered"]
-[connection signal="mouse_exited" from="EscolhaModo/VBoxContainer/SoloOptionButton" to="EscolhaModo/VBoxContainer/SoloOptionButton" method="_on_SoloOptionButton_mouse_exited"]
-[connection signal="pressed" from="EscolhaModo/VBoxContainer/SoloOptionButton" to="EscolhaModo/VBoxContainer/SoloOptionButton" method="_on_SoloOptionButton_pressed"]
-[connection signal="mouse_entered" from="EscolhaModo/VBoxContainer/VoltarButton" to="EscolhaModo/VBoxContainer/VoltarButton" method="_on_VoltarButton_mouse_entered"]
-[connection signal="mouse_exited" from="EscolhaModo/VBoxContainer/VoltarButton" to="EscolhaModo/VBoxContainer/VoltarButton" method="_on_VoltarButton_mouse_exited"]
-[connection signal="pressed" from="EscolhaModo/VBoxContainer/VoltarButton" to="." method="_on_VoltarButton_pressed"]
+
+[node name="Control" parent="." instance=ExtResource( 16 )]
 [connection signal="mouse_entered" from="MainChoices/Button/NewGameButton" to="MainChoices/Button/NewGameButton" method="_on_NewGameButton_mouse_entered"]
 [connection signal="mouse_exited" from="MainChoices/Button/NewGameButton" to="MainChoices/Button/NewGameButton" method="_on_NewGameButton_mouse_exited"]
 [connection signal="pressed" from="MainChoices/Button/NewGameButton" to="." method="_on_NewGameButton_pressed"]
@@ -259,3 +256,9 @@ __meta__ = {
 [connection signal="mouse_entered" from="MainChoices/Button/Control/ToolButton" to="MainChoices/Button/Control/ToolButton" method="_on_ToolButton_mouse_entered"]
 [connection signal="mouse_exited" from="MainChoices/Button/Control/ToolButton" to="MainChoices/Button/Control/ToolButton" method="_on_ToolButton_mouse_exited"]
 [connection signal="pressed" from="MainChoices/Button/Control/ToolButton" to="MainChoices/Button/Control/Popup" method="_on_ToolButton_pressed"]
+[connection signal="mouse_entered" from="EscolhaModo/VBoxContainer/SoloOptionButton" to="EscolhaModo/VBoxContainer/SoloOptionButton" method="_on_SoloOptionButton_mouse_entered"]
+[connection signal="mouse_exited" from="EscolhaModo/VBoxContainer/SoloOptionButton" to="EscolhaModo/VBoxContainer/SoloOptionButton" method="_on_SoloOptionButton_mouse_exited"]
+[connection signal="pressed" from="EscolhaModo/VBoxContainer/SoloOptionButton" to="EscolhaModo/VBoxContainer/SoloOptionButton" method="_on_SoloOptionButton_pressed"]
+[connection signal="mouse_entered" from="EscolhaModo/VBoxContainer/VoltarButton" to="EscolhaModo/VBoxContainer/VoltarButton" method="_on_VoltarButton_mouse_entered"]
+[connection signal="mouse_exited" from="EscolhaModo/VBoxContainer/VoltarButton" to="EscolhaModo/VBoxContainer/VoltarButton" method="_on_VoltarButton_mouse_exited"]
+[connection signal="pressed" from="EscolhaModo/VBoxContainer/VoltarButton" to="." method="_on_VoltarButton_pressed"]
