@@ -33,22 +33,18 @@ func recebendo_dano(damage):
 
 func dead():
 	dead_animation()
-	yield(get_tree().create_timer(2),"timeout")
-	#Remover a nave inimiga do minimapa e da cena
-	emit_signal("removed", self)
+	$LightOccluder2D.visible = false
+	yield(get_tree().create_timer(0.5),"timeout")
 	Global.shake_screen = true
+	#Remover a nave inimiga do minimapa e da cena
+	yield(get_tree().create_timer(1.7),"timeout")
+	emit_signal("removed", self)
 	queue_free()
 	
 func dead_animation():
 	set_physics_process(false)
 	na_area = false
 	$explosion/AnimationPlayer.play("explosion")
-	
-	#var animation = preload("res://Cenas/Efeitos/explosion.tscn").instance()
-#	var animation = preload("res://Cenas/Efeitos/Explosion.tscn").instance()
-#	animation.position = get_global_position()
-#	get_tree().get_root().add_child(animation)
-	
 	
 func _on_Visao_body_entered(body):
 	if body.is_in_group("player1"):

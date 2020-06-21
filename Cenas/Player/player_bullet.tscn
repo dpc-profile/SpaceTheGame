@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Cenas/Player/player_bullet.gd" type="Script" id=1]
 [ext_resource path="res://imagens/Sprite_separado/sheet.laserBlue16.atlastex" type="Texture" id=2]
 [ext_resource path="res://imagens/luz/ocal.jpg" type="Texture" id=3]
 [ext_resource path="res://Cenas/Efeitos/bullet_particle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Cenas/Efeitos/bullet_explosion.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.80876
@@ -43,5 +44,8 @@ shadow_enabled = true
 [node name="blue" parent="." instance=ExtResource( 4 )]
 emitting = false
 one_shot = true
+
+[node name="bullet_explosion" parent="." instance=ExtResource( 5 )]
+position = Vector2( 0, 0 )
 [connection signal="body_entered" from="." to="." method="_on_player_bullet_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
