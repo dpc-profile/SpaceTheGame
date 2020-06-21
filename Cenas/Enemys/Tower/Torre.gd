@@ -37,7 +37,10 @@ func recebendo_dano(damage):
 		hp -= damage
 		if hp <= 0:
 			tower_disable()
+			$smoke_particle.emitting = true
+			$smoke_particle.initial_velocity = 15
 			yield(get_tree().create_timer(4),"timeout")#Um timer de 4 segundos
+			$smoke_particle.emitting = false
 			tower_enable()
 		
 func tower_disable():

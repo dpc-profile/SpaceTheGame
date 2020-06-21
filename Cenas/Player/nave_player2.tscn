@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://imagens/luz/around.png" type="Texture" id=1]
 [ext_resource path="res://Cenas/Player/nave_player2.gd" type="Script" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://imagens/Objects/Gem.png" type="Texture" id=4]
 [ext_resource path="res://Cenas/GUI_Player/GUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Cenas/GUI_Player/ProgressBar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Cenas/Efeitos/smoke.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Cenas/Efeitos/technical_problem.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Cenas/Efeitos/comet_tail.tscn" type="PackedScene" id=10]
 
 [node name="player2" type="KinematicBody2D" groups=[
 "player1",
@@ -16,15 +19,27 @@ collision_mask = 3
 script = ExtResource( 2 )
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 0, -1.6366 )
+position = Vector2( 0, -1.03525 )
 texture = ExtResource( 1 )
 texture_scale = 2.0
 shadow_enabled = true
+
+[node name="smoke_particle" parent="." instance=ExtResource( 7 )]
+
+[node name="comet_tail" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1.59254, 35 )
+emitting = false
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.04, 0.04 )
 texture = ExtResource( 3 )
 region_rect = Rect2( 314, 456, 101, 77 )
+
+[node name="technical_problem" parent="." instance=ExtResource( 9 )]
+position = Vector2( 37.9613, 7.65502 )
+
+[node name="technical_problem2" parent="." instance=ExtResource( 9 )]
+position = Vector2( -40.1042, 35.7903 )
 
 [node name="GUI" parent="." instance=ExtResource( 5 )]
 margin_left = -58.3382

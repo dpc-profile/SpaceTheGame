@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="Curve" id=1]
+min_value = -200.0
+max_value = 200.0
+_data = [ Vector2( 0.00411523, 59.0909 ), 0.0, 0.0, 0, 0, Vector2( 1, 15 ), 100.987, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=2]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 197.182 ), 0.0, -413.978, 0, 0, Vector2( 1, 1 ), -196.182, 0.0, 1, 0 ]
+
+[sub_resource type="Curve" id=3]
+max_value = 5.0
+_data = [ Vector2( 0.00411523, 1.60795 ), 0.0, 0.0, 0, 0, Vector2( 0.991769, 0.0124999 ), -1.6154, 0.0, 1, 0 ]
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0.0681818, 0.4, 0.709091, 0.922727 )
+colors = PoolColorArray( 0.996094, 0.988312, 0.988312, 1, 0.0627451, 0.909804, 0.890196, 0.694118, 0.874529, 0.925781, 0.137421, 0.813776, 0.976563, 0.138015, 0.0267029, 0.933435 )
+
+[node name="comet_tail" type="CPUParticles2D"]
+position = Vector2( -1.22632, -10.395 )
+rotation = 1.5708
+amount = 500
+lifetime = 0.5
+local_coords = false
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector2( 0, 0 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 5.0
+linear_accel_curve = SubResource( 1 )
+angle = 45.0
+angle_curve = SubResource( 2 )
+scale_amount = 5.0
+scale_amount_curve = SubResource( 3 )
+color_ramp = SubResource( 4 )

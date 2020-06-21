@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="Curve" id=1]
+min_value = -200.0
+max_value = 200.0
+_data = [ Vector2( 0.00823046, 54.0909 ), 0.0, 328.295, 0, 0, Vector2( 0.991769, 193.636 ), 100.987, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=2]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 197.182 ), 0.0, -413.978, 0, 0, Vector2( 1, 1 ), -196.182, 0.0, 1, 0 ]
+
+[sub_resource type="Curve" id=3]
+max_value = 5.0
+_data = [ Vector2( 0.00411523, 1.60795 ), 0.0, 0.0, 0, 0, Vector2( 0.991769, 0.0124999 ), -1.6154, 0.0, 1, 0 ]
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0, 0.282787, 0.504545, 0.65 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.5446, 0.255281, 0, 0.811234, 0.984314, 0.761305, 0, 0.658824, 0.513275, 0.483999, 0.384055, 0.918643 )
+
+[node name="technical_problem" type="CPUParticles2D"]
+position = Vector2( 1.10803, -1.45923 )
+rotation = 1.5708
+amount = 300
+lifetime = 0.3
+local_coords = false
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector2( 0, 0 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 45.0
+linear_accel_curve = SubResource( 1 )
+angle = 45.0
+angle_curve = SubResource( 2 )
+scale_amount = 5.0
+scale_amount_curve = SubResource( 3 )
+color_ramp = SubResource( 4 )

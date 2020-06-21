@@ -12,8 +12,7 @@
 [ext_resource path="res://Cenas/Gem/gem_body.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Cenas/Menu_Pausa/Pause.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Fontes/Boldness.otf" type="DynamicFontData" id=12]
-
-[sub_resource type="GradientTexture" id=1]
+[ext_resource path="res://Cenas/Efeitos/stars.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 256, 256, 0, 256, 0, 0, 256, 0 )
@@ -69,6 +68,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.537255, 0.505882, 0.505882, 1 )
 position = Vector2( 768, 1024 )
 scale = Vector2( 12.4998, 13 )
 texture = ExtResource( 1 )
@@ -76,17 +76,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="down_side_spawn" type="Sprite" parent="."]
-position = Vector2( 768, 2000 )
-scale = Vector2( 0.108733, 84.7971 )
-texture = SubResource( 1 )
-
-[node name="Position2D" type="Position2D" parent="down_side_spawn"]
-
-[node name="up_side_spawn2" type="Sprite" parent="."]
-position = Vector2( 768, 48 )
-scale = Vector2( 0.108733, 84.7971 )
-texture = SubResource( 1 )
+[node name="stars" parent="." instance=ExtResource( 13 )]
 
 [node name="down_side" type="TileMap" parent="."]
 position = Vector2( 768, 1024 )

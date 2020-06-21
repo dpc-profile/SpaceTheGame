@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Curve" id=1]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0.00749064, 124.364 ), 0.0, 0.0, 0, 0, Vector2( 1, 6.54544 ), -102.802, 0.0, 0, 0 ]
+
+[node name="stars" type="CPUParticles2D"]
+amount = 100
+lifetime = 3.0
+emission_shape = 2
+emission_rect_extents = Vector2( 1980, 1800 )
+direction = Vector2( 0, 0 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+angular_velocity = 25.0
+angular_velocity_curve = SubResource( 1 )
+scale_amount = 5.0

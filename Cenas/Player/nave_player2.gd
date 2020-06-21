@@ -11,7 +11,6 @@ var gem = "live"
 
 var gem_body = preload("res://Cenas/Gem/gem_body.tscn")
 var gem_droped
- 
 #define o time do personagem
 var team = 1
 
@@ -41,8 +40,8 @@ func _process(delta):
 		$gem_target.visible = true
 	else:
 		$gem_target.visible = false
-	
-	
+		
+		
 
 func _olhe_para_mouse():
 	look_at(get_global_mouse_position())
@@ -51,8 +50,10 @@ func _olhe_para_mouse():
 func _mova_para_mouse(delta):
 	if Input.is_action_pressed("mouse_right"):
 		acc = Vector2(thrust, 0).rotated(rotation+80.1)
+		$comet_tail.emitting = true
 	else:
 		acc = Vector2(0,0)
+		$comet_tail.emitting = false
 	acc += vel * -friction
 	vel += acc * delta
 	move_and_slide(vel)

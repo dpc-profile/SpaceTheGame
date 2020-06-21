@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Cenas/Player/player_bullet.gd" type="Script" id=1]
 [ext_resource path="res://imagens/Sprite_separado/sheet.laserBlue16.atlastex" type="Texture" id=2]
 [ext_resource path="res://imagens/luz/ocal.jpg" type="Texture" id=3]
+[ext_resource path="res://Cenas/Efeitos/bullet_particle.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 5.80876
@@ -14,6 +15,9 @@ collision_mask = 3
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 8.80019, 3.18566e-05 )
@@ -35,5 +39,9 @@ position = Vector2( -2, 0 )
 texture = ExtResource( 3 )
 texture_scale = 0.5
 shadow_enabled = true
+
+[node name="blue" parent="." instance=ExtResource( 4 )]
+emitting = false
+one_shot = true
 [connection signal="body_entered" from="." to="." method="_on_player_bullet_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
