@@ -11,7 +11,6 @@
 [ext_resource path="res://Cenas/Efeitos/technical_problem.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Cenas/Efeitos/comet_tail.tscn" type="PackedScene" id=10]
 
-
 [node name="player2" type="KinematicBody2D" groups=[
 "player1",
 ]]

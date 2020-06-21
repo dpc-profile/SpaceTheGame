@@ -6,6 +6,7 @@ var gem = "die"
 var pickable_gem
 var gem_holder
 var vitoria = false
+var shake_screen = false
 
 
 #recebe a posição global do nave_player2

@@ -35,8 +35,8 @@ func _physics_process(delta):
 
 func _process(delta):
 	
-	if Input.is_action_just_pressed("ui_select"):
-		$Camera2D/ScreenShake.start()
+	if Global.shake_screen:
+		$Camera2D/ScreenShake._start()
 		
 	if Global.vitoria == true:
 		vitoria()
@@ -87,6 +87,7 @@ func recebendo_dano(dano):
 		$technical_problem.emitting = true
 		$technical_problem2.emitting = true
 	if $ProgressBar.value <= 0:
+		return
 		game_over()
 
 

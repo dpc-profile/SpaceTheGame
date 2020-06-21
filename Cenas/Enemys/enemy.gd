@@ -36,14 +36,20 @@ func dead():
 	yield(get_tree().create_timer(2),"timeout")
 	#Remover a nave inimiga do minimapa e da cena
 	emit_signal("removed", self)
+	Global.shake_screen = true
 	queue_free()
 	
 func dead_animation():
-#	set_physics_process(false)
-#	na_area = false
-	var animation = preload("res://Cenas/Efeitos/explosion.tscn").instance()
-	animation.position = get_global_position()
-	get_tree().get_root().add_child(animation)
+	set_physics_process(false)
+	na_area = false
+	$explosion/AnimationPlayer.play("explosion")
+	
+	#var animation = preload("res://Cenas/Efeitos/explosion.tscn").instance()
+#	var animation = preload("res://Cenas/Efeitos/Explosion.tscn").instance()
+#	animation.position = get_global_position()
+#	get_tree().get_root().add_child(animation)
+	
+	
 func _on_Visao_body_entered(body):
 	if body.is_in_group("player1"):
 		na_area = true

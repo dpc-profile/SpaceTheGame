@@ -8,7 +8,6 @@ func _ready():
 	for object in get_tree().get_nodes_in_group("minimap_objects"):
 		object.connect("removed", $CanvasLayer/MiniMap, "_on_object_removed")
 
-
 func _on_Timer_timeout():
 	segundos += 1
 	pega_tempo.pega_seg = segundos
@@ -17,6 +16,3 @@ func _on_Timer_timeout():
 		minutos +=01
 		pega_tempo.pega_min = minutos
 		segundos = 0
-	
-	
-	pass # Replace with function body.
