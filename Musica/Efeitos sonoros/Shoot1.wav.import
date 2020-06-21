@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Shoot1.wav-ae9804f6fe8c483b2ed352c7b1a5b880.sample"
+
+[deps]
+
+source_file="res://Musica/Efeitos sonoros/Shoot1.wav"
+dest_files=[ "res://.import/Shoot1.wav-ae9804f6fe8c483b2ed352c7b1a5b880.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

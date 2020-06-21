@@ -34,6 +34,7 @@ func disparar():
 	bala.global_position = $bullet_point_enemy.global_position
 	bala.rotation = rotation
 	get_tree().root.add_child(bala)
+	$tiro.play()
 
 func recebendo_dano(damage):
 	$hurt.play()
