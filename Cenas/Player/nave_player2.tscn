@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://imagens/luz/around.png" type="Texture" id=1]
 [ext_resource path="res://Cenas/Player/nave_player2.gd" type="Script" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Cenas/Efeitos/Shake_Screen/ScreenShake.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Cenas/Efeitos/technical_problem.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Cenas/Efeitos/comet_tail.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Musica/Efeitos sonoros/hurt.wav" type="AudioStream" id=11]
+[ext_resource path="res://Musica/Efeitos sonoros/shot.wav" type="AudioStream" id=12]
 
 [node name="player2" type="KinematicBody2D" groups=[
 "player1",
@@ -79,3 +81,9 @@ margin_left = -60.9753
 margin_top = 49.4993
 margin_right = 62.0247
 margin_bottom = 69.4993
+
+[node name="hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="tiro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )

@@ -74,12 +74,15 @@ func shoot():
 	bullet.apply_impulse(Vector2(), Vector2(direcao*bullet_speed).rotated(rotation))
 	get_tree().root.add_child(bullet)
 	
+	$tiro.play()
+	
 	can_fire = false
 	yield(get_tree().create_timer(fire_rate),"timeout")
 	can_fire = true
 
 
 func recebendo_dano(dano):
+	$hurt.play()
 	$ProgressBar.value -= dano
 	if $ProgressBar.value <= 60:
 		$smoke_particle.emitting = true
@@ -87,7 +90,6 @@ func recebendo_dano(dano):
 		$technical_problem.emitting = true
 		$technical_problem2.emitting = true
 	if $ProgressBar.value <= 0:
-		return
 		game_over()
 
 

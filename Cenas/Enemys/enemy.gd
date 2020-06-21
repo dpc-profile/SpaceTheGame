@@ -21,6 +21,7 @@ func _physics_process(delta):
 	mov = move_and_slide(mov)
 
 func recebendo_dano(damage):
+	$hurt.play()
 	$ProgressBar.value -= damage
 	if $ProgressBar.value <= 50:
 		$smoke_particle.emitting = true
@@ -59,6 +60,7 @@ func _on_FireRate_timeout():
 		disparar()
 
 func disparar():
+	$tiro.play()
 	var bala = cena_bala.instance()
 	bala.global_position = $BulletPointEnemy.global_position
 	bala.rotation = rotation + 4.8

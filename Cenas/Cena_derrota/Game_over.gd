@@ -4,6 +4,8 @@ var segundos = 3
 var tempo_seg = pega_tempo.pega_seg
 var tempo_min = pega_tempo.pega_min
 
+func _ready():
+	$derrota.play()
 #Pressionar espaço para iniciar o timer
 func _process(delta):
 	if(Input.is_action_just_pressed("ui_select")):

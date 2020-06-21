@@ -36,6 +36,7 @@ func disparar():
 	get_tree().root.add_child(bala)
 
 func recebendo_dano(damage):
+	$hurt.play()
 	if !disable:
 		hp -= damage
 		if hp <= 0:

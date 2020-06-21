@@ -26,7 +26,7 @@ _data = [ Vector2( 0, 3 ), 0.0, 0.0895762, 0, 0, Vector2( 0.346457, 1.88068 ), -
 
 [sub_resource type="Animation" id=5]
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:color_ramp")
+tracks/0/path = NodePath("baixo_esquerda:color_ramp")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -38,7 +38,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("baixo_esquerda:color_ramp")
+tracks/1/path = NodePath("baixo_direita:color_ramp")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -50,7 +50,7 @@ tracks/1/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("baixo_direita:color_ramp")
+tracks/2/path = NodePath("cima_esquerda:color_ramp")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -62,7 +62,7 @@ tracks/2/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("cima_esquerda:color_ramp")
+tracks/3/path = NodePath("cima_direita:color_ramp")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -74,7 +74,7 @@ tracks/3/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("cima_direita:color_ramp")
+tracks/4/path = NodePath(".:emitting")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -83,7 +83,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -209,10 +209,12 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true ]
 }
 
 [node name="bullet_explosion" instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 0, 0 )
 scale = Vector2( 1, 1 )
 emitting = false
 lifetime = 0.3
@@ -227,7 +229,7 @@ angle = 1.0
 angle_curve = SubResource( 1 )
 scale_amount = 0.5
 scale_amount_curve = SubResource( 2 )
-color_ramp = ExtResource( 4 )
+color_ramp = ExtResource( 3 )
 
 [node name="baixo_esquerda" type="CPUParticles2D" parent="." index="0"]
 emitting = false
@@ -278,7 +280,6 @@ scale_amount_curve = SubResource( 4 )
 color_ramp = ExtResource( 4 )
 
 [node name="cima_direita" type="CPUParticles2D" parent="." index="3"]
-position = Vector2( -6.1601, 3.08005 )
 emitting = false
 amount = 50
 lifetime = 2.0
