@@ -58,7 +58,6 @@ region_rect = Rect2( 112, 106, 91, 77 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-smoothing_enabled = true
 
 [node name="ScreenShake" parent="Camera2D" instance=ExtResource( 8 )]
 
