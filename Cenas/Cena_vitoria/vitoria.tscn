@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Cenas/Cena_vitoria/vitoria.gd" type="Script" id=1]
 [ext_resource path="res://Fontes/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Fontes/Boldness.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://Musica/Soundtrack/Wii_Music_-_No_Copyright.wav" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 65
@@ -102,4 +103,7 @@ text = "Respawn em:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="vitoria" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

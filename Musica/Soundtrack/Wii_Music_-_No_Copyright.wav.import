@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Wii_Music_-_No_Copyright.wav-974ffced2650d9cf552af53e95734ed1.sample"
+
+[deps]
+
+source_file="res://Musica/Soundtrack/Wii_Music_-_No_Copyright.wav"
+dest_files=[ "res://.import/Wii_Music_-_No_Copyright.wav-974ffced2650d9cf552af53e95734ed1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
