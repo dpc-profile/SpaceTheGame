@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Cenas/Enemys/tiroInimigo.gd" type="Script" id=1]
-[ext_resource path="res://imagens/Torret Fire]/flame9-3.png" type="Texture" id=2]
+[ext_resource path="res://imagens/Sprite_separado/sheet.laserBlue16.atlastex" type="Texture" id=2]
 [ext_resource path="res://Cenas/Efeitos/bullet_explosion.tscn" type="PackedScene" id=3]
+[ext_resource path="res://imagens/luz/ocal.jpg" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 14.4567
@@ -16,6 +17,9 @@ collision_mask = 3
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Area2D"]
+modulate = Color( 0.968627, 0.0156863, 0.0156863, 1 )
+rotation = 1.5708
+scale = Vector2( 0.6, 0.5 )
 texture = ExtResource( 2 )
 flip_h = true
 
@@ -28,6 +32,12 @@ shape = SubResource( 1 )
 wait_time = 2.0
 autostart = true
 
-[node name="bullet_explosion" parent="." instance=ExtResource( 3 )]
+[node name="bullet_explosion" parent="Area2D" instance=ExtResource( 3 )]
+
+[node name="Light2D" type="Light2D" parent="Area2D"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+color = Color( 1, 0.0431373, 0.0431373, 0.698039 )
+shadow_enabled = true
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_bala_acerta_body_entered"]
 [connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_Timer_timeout"]
