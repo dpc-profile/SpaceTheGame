@@ -10,10 +10,10 @@ _data = [ Vector2( 0, 19.6364 ), 0.0, 1089.82, 0, 1, Vector2( 0.222222, 261.818 
 
 [sub_resource type="Curve" id=2]
 max_value = 4.0
-_data = [ Vector2( 0.00729927, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.423358, 2.1 ), -0.750956, -0.750956, 0, 0, Vector2( 0.988189, 0.238636 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0.00729927, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.442308, 3.05455 ), -0.750956, -0.750956, 0, 0, Vector2( 1, 0.836364 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="Gradient" id=3]
-offsets = PoolRealArray( 0, 0.116883, 0.277056, 0.735931 )
+offsets = PoolRealArray( 0, 0.116883, 0.277056, 0.432099 )
 colors = PoolColorArray( 1, 1, 1, 1, 0.851563, 0.651458, 0.26944, 1, 0.941406, 0.608145, 0.0882568, 1, 0.106306, 0.00124577, 0.00124577, 1 )
 
 [sub_resource type="Animation" id=4]
@@ -38,21 +38,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.7, 1.4, 2.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.6, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, true, true, true ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath("AudioStreamPlayer2D")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"values": [ true, true, true ]
 }
 
 [node name="explosion" type="CPUParticles2D"]

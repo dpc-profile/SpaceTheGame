@@ -10,6 +10,7 @@ colors = PoolColorArray( 0.929245, 0.951643, 0.999171, 1 )
 
 [node name="blue" type="CPUParticles2D"]
 show_behind_parent = true
+position = Vector2( -0.340561, 0.340561 )
 scale = Vector2( 1, 0.989494 )
 amount = 50
 lifetime = 2.0
