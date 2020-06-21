@@ -19,6 +19,9 @@ var can_fire = true
 var direcao = Vector2()
 
 func _ready():
+	$smoke_particle.emitting = false
+	$technical_problem.emitting = false
+	$technical_problem2.emitting = false
 	$GUI/NickName.text = pega_Nome.player_Nome #Coloca o Nickname no Player
 	add_to_group("player1")
 	$gem_target.visible = false
@@ -75,6 +78,11 @@ func shoot():
 
 func recebendo_dano(dano):
 	$ProgressBar.value -= dano
+	if $ProgressBar.value <= 60:
+		$smoke_particle.emitting = true
+	if $ProgressBar.value <= 25:
+		$technical_problem.emitting = true
+		$technical_problem2.emitting = true
 	if $ProgressBar.value <= 0:
 		game_over()
 

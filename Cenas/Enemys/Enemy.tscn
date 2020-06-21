@@ -52,6 +52,7 @@ shape = SubResource( 1 )
 occluder = SubResource( 2 )
 
 [node name="Visao" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Visao"]
 shape = SubResource( 3 )
@@ -60,10 +61,12 @@ shape = SubResource( 3 )
 autostart = true
 
 [node name="smoke_particle" parent="." instance=ExtResource( 5 )]
-emitting = false
 
 [node name="technical_problem" parent="." instance=ExtResource( 6 )]
-emitting = false
+position = Vector2( -7.64197, 27.2908 )
+
+[node name="technical_problem2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 31.108, -17.7092 )
 [connection signal="body_entered" from="Visao" to="." method="_on_Visao_body_entered"]
 [connection signal="body_exited" from="Visao" to="." method="_on_Visao_body_exited"]
 [connection signal="timeout" from="FireRate" to="." method="_on_FireRate_timeout"]

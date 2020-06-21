@@ -7,6 +7,11 @@ var mov = Vector2(0,0)
 var minimap_icon = "mob"
 var na_area = false
 
+func _ready():
+	$smoke_particle.emitting = false
+	$technical_problem.emitting = false
+	$technical_problem2.emitting = false
+	
 func _physics_process(delta):
 	mov.x = speed
 	if Global.player_global_pos != null:
@@ -17,6 +22,12 @@ func _physics_process(delta):
 
 func recebendo_dano(damage):
 	$ProgressBar.value -= damage
+	if $ProgressBar.value <= 50:
+		$smoke_particle.emitting = true
+		#chama smoke
+	if $ProgressBar.value <= 25:
+		$technical_problem.emitting = true
+		$technical_problem2.emitting = true
 	if($ProgressBar.value <= 0):
 		dead()
 

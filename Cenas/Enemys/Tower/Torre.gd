@@ -10,6 +10,9 @@ var disable = false
 
 var minimap_icon="mob"
 
+func _ready():
+	$smoke_particle.emitting = false
+
 func _process(delta):
 	if Global.player_global_pos != null and !disable:
 		look_at(Global.player_global_pos)
@@ -37,18 +40,18 @@ func recebendo_dano(damage):
 		hp -= damage
 		if hp <= 0:
 			tower_disable()
-			$smoke_particle.emitting = true
-			$smoke_particle.initial_velocity = 15
 			yield(get_tree().create_timer(4),"timeout")#Um timer de 4 segundos
-			$smoke_particle.emitting = false
 			tower_enable()
 		
 func tower_disable():
+	$smoke_particle.emitting = true
+	$smoke_particle.initial_velocity = 15
 	$Sprite.self_modulate = Color.gray
 	dentro_area = false
 	disable = true
 
 func tower_enable():
+	$smoke_particle.emitting = false
 	$Sprite.self_modulate = Color(1,1,1,1)
 	dentro_area = true
 	disable = false
