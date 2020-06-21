@@ -12,7 +12,7 @@ func _on_LineEdit_text_changed(new_text):
 func _on_Comecar_pressed():
 	if lineEdit == "":#não deixa o player entrar sem um nome
 		return
-
+	get_node("/root/menu_musica/Som_start").play()
 	_load_game()
 	
 func _load_game():

@@ -299,5 +299,3 @@ anims/player_bullet = SubResource( 6 )
 
 [node name="explosion_animation" type="AnimationPlayer" parent="." index="5"]
 anims/explode = SubResource( 7 )
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="6"]

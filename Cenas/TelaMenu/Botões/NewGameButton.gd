@@ -6,6 +6,7 @@ export (Color, RGB) var mouse_dentro
 
 
 func _on_NewGameButton_mouse_entered():
+	get_node("/root/menu_musica/Som_botoes").play()
 	#muda a cor	
 	set_modulate(mouse_dentro)
 	#muda o tamanho	

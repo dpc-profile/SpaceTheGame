@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Cenas/Enemys/tiroInimigo.gd" type="Script" id=1]
 [ext_resource path="res://imagens/Torret Fire]/flame9-3.png" type="Texture" id=2]
+[ext_resource path="res://Cenas/Efeitos/bullet_explosion.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 14.4567
@@ -26,5 +27,7 @@ shape = SubResource( 1 )
 [node name="Timer" type="Timer" parent="Area2D"]
 wait_time = 2.0
 autostart = true
+
+[node name="bullet_explosion" parent="." instance=ExtResource( 3 )]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_bala_acerta_body_entered"]
 [connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_Timer_timeout"]

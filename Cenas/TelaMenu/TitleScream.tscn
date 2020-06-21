@@ -242,7 +242,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" parent="." instance=ExtResource( 16 )]
+[node name="Fade_in" parent="." instance=ExtResource( 16 )]
 [connection signal="mouse_entered" from="MainChoices/Button/NewGameButton" to="MainChoices/Button/NewGameButton" method="_on_NewGameButton_mouse_entered"]
 [connection signal="mouse_exited" from="MainChoices/Button/NewGameButton" to="MainChoices/Button/NewGameButton" method="_on_NewGameButton_mouse_exited"]
 [connection signal="pressed" from="MainChoices/Button/NewGameButton" to="." method="_on_NewGameButton_pressed"]

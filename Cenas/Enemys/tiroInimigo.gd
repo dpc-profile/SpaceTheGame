@@ -13,6 +13,7 @@ func _on_bala_acerta_body_entered(body):
 	get_tree().get_root().add_child(explosion_instance)
 	if body.is_in_group("player1"):
 		body.recebendo_dano(dano)
+		
 	queue_free()
 
 #Se a bala não acertar, depois de 2 segundo ela some

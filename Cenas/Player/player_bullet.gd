@@ -18,6 +18,6 @@ func _on_player_bullet_body_entered(body):
 	queue_free()
 	if (body is KinematicBody2D):
 		body.recebendo_dano(damage)
-
+		
 func _on_Timer_timeout():
 	queue_free()
