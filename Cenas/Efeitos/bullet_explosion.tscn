@@ -1,0 +1,303 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Cenas/Efeitos/bullet_particle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://imagens/explosion/explosion.png" type="Texture" id=2]
+[ext_resource path="res://Cenas/Efeitos/player_bullet.tres" type="Gradient" id=3]
+[ext_resource path="res://Cenas/Efeitos/enemy_bullet.tres" type="Gradient" id=4]
+
+[sub_resource type="Curve" id=1]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 360 ), 0.0, -277.091, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=2]
+min_value = 1.0
+max_value = 3.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.240385, 1.41364 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=3]
+max_value = 100.0
+_data = [ Vector2( 0, 100 ), 0.0, 11.4995, 0, 0, Vector2( 0.244094, 30.9091 ), -82.4675, -82.4675, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=4]
+min_value = 0.5
+max_value = 3.0
+_data = [ Vector2( 0, 3 ), 0.0, 0.0895762, 0, 0, Vector2( 0.346457, 1.88068 ), -5.00303, -5.00303, 0, 0, Vector2( 1, 0.5 ), -1.44318, 0.0, 0, 0 ]
+
+[sub_resource type="Animation" id=5]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color_ramp")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("baixo_esquerda:color_ramp")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("baixo_direita:color_ramp")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("cima_esquerda:color_ramp")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("cima_direita:color_ramp")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("baixo_esquerda:color_ramp")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("baixo_direita:color_ramp")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("cima_esquerda:color_ramp")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("cima_direita:color_ramp")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:color_ramp")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("baixo_esquerda:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("baixo_direita:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("cima_esquerda:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("cima_direita:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[node name="bullet_explosion" instance=ExtResource( 1 )]
+scale = Vector2( 1, 1 )
+emitting = false
+lifetime = 0.7
+one_shot = true
+fract_delta = false
+texture = ExtResource( 2 )
+emission_sphere_radius = 5.0
+direction = Vector2( 0, 0 )
+initial_velocity = 0.0
+linear_accel_curve = null
+angle = 1.0
+angle_curve = SubResource( 1 )
+scale_amount = 0.5
+scale_amount_curve = SubResource( 2 )
+color_ramp = ExtResource( 4 )
+
+[node name="baixo_esquerda" type="CPUParticles2D" parent="." index="0"]
+emitting = false
+amount = 50
+lifetime = 3.0
+one_shot = true
+local_coords = false
+emission_shape = 1
+emission_sphere_radius = 15.0
+direction = Vector2( -1, 1 )
+gravity = Vector2( 0, 0 )
+initial_velocity = 15.0
+orbit_velocity = 0.25
+linear_accel_curve = SubResource( 3 )
+scale_amount_curve = SubResource( 4 )
+color_ramp = ExtResource( 4 )
+
+[node name="baixo_direita" type="CPUParticles2D" parent="." index="1"]
+emitting = false
+amount = 50
+lifetime = 3.0
+one_shot = true
+local_coords = false
+emission_shape = 1
+emission_sphere_radius = 15.0
+direction = Vector2( 1, 1 )
+gravity = Vector2( 0, 0 )
+initial_velocity = 15.0
+orbit_velocity = 0.25
+linear_accel_curve = SubResource( 3 )
+scale_amount_curve = SubResource( 4 )
+color_ramp = ExtResource( 4 )
+
+[node name="cima_esquerda" type="CPUParticles2D" parent="." index="2"]
+emitting = false
+amount = 50
+lifetime = 3.0
+one_shot = true
+local_coords = false
+emission_shape = 1
+emission_sphere_radius = 15.0
+direction = Vector2( -1, -1 )
+gravity = Vector2( 0, 0 )
+initial_velocity = 15.0
+orbit_velocity = 0.25
+linear_accel_curve = SubResource( 3 )
+scale_amount_curve = SubResource( 4 )
+color_ramp = ExtResource( 4 )
+
+[node name="cima_direita" type="CPUParticles2D" parent="." index="3"]
+emitting = false
+amount = 50
+lifetime = 3.0
+one_shot = true
+local_coords = false
+emission_shape = 1
+emission_sphere_radius = 15.0
+direction = Vector2( 1, -1 )
+gravity = Vector2( 0, 0 )
+initial_velocity = 15.0
+orbit_velocity = 0.25
+linear_accel_curve = SubResource( 3 )
+scale_amount_curve = SubResource( 4 )
+color_ramp = ExtResource( 4 )
+
+[node name="color_animation" type="AnimationPlayer" parent="." index="4"]
+anims/enemy_bullet = SubResource( 5 )
+anims/player_bullet = SubResource( 6 )
+
+[node name="explosion_animation" type="AnimationPlayer" parent="." index="5"]
+anims/explode = SubResource( 7 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="6"]

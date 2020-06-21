@@ -1,6 +1,6 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://imagens/Background/darkPurple.png" type="Texture" id=1]
+[ext_resource path="res://Cenas/Map/Tilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://imagens/Objects/BGTile (3).png" type="Texture" id=2]
 [ext_resource path="res://Cenas/Enemys/tower/Torre.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Cenas/Player/nave_player2.tscn" type="PackedScene" id=4]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Fontes/Boldness.otf" type="DynamicFontData" id=12]
 [ext_resource path="res://Cenas/Efeitos/stars.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Cenas/Fade_tela/Fade_telal.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Cenas/Map/Background.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 256, 256, 0, 256, 0, 0, 256, 0 )
@@ -27,11 +28,6 @@ points = PoolVector2Array( 256, 256, 0, 256, 0, 0, 256, 0 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 1 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
@@ -41,33 +37,7 @@ points = PoolVector2Array( 256, 256, 0, 256, 0, 0, 256, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="ConvexPolygonShape2D" id=3]
-points = PoolVector2Array( 256, 256, 0, 256, 0, 0, 256, 0 )
-
-[sub_resource type="TileSet" id=4]
-0/name = "BGTile (3).png 0"
-0/texture = ExtResource( 2 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 256, 256 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 3 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 3 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
-
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 size = 25
 font_data = ExtResource( 12 )
 
@@ -78,23 +48,18 @@ __meta__ = {
 "_edit_vertical_guides_": [ 768.0 ]
 }
 
-[node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 0.537255, 0.505882, 0.505882, 1 )
-position = Vector2( 768, 1024 )
-scale = Vector2( 12.4998, 13 )
-texture = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Sprite" parent="." instance=ExtResource( 15 )]
 
 [node name="stars" parent="." instance=ExtResource( 13 )]
+position = Vector2( 863.735, 1062.93 )
+emission_rect_extents = Vector2( 1300, 1100 )
 
 [node name="down_side" type="TileMap" parent="."]
 position = Vector2( 768, 1024 )
 scale = Vector2( 0.5, 0.5 )
 tile_set = SubResource( 2 )
 format = 1
-tile_data = PoolIntArray( -2228234, 0, 0, -2293754, 0, 0, 524266, 0, 0, 458754, 0, 0, 458774, 0, 0, 1310702, 0, 0, 1245194, 0, 0, 1966086, 0, 0 )
+tile_data = PoolIntArray( -2228234, 0, 0, -2293754, 0, 0, 524266, 0, 0, 458754, 0, 0, 458774, 0, 0, 1310702, 0, 0, 1245194, 0, 0 )
 
 [node name="up_side" type="TileMap" parent="."]
 position = Vector2( 768, 1024 )
@@ -104,14 +69,8 @@ tile_set = SubResource( 2 )
 format = 1
 tile_data = PoolIntArray( 524262, 0, 0, 524266, 0, 0, 524270, 0, 0, 524282, 0, 0, 524286, 0, 0, 458754, 0, 0, 458766, 0, 0, 458770, 0, 0, 458774, 0, 0, 1310702, 0, 0, 1310706, 0, 0, 1310710, 0, 0, 1245190, 0, 0, 1245194, 0, 0, 1245198, 0, 0 )
 
-[node name="laterais" type="TileMap" parent="."]
-position = Vector2( 1152, 1672 )
-scale = Vector2( 0.5, 0.5 )
-tile_set = SubResource( 4 )
-collision_layer = 7
-collision_mask = 7
-format = 1
-tile_data = PoolIntArray( -3801134, 0, 0, -3801130, 0, 0, -3801126, 0, 0, -3801122, 0, 0, -3801118, 0, 0, -3801114, 0, 0, -3801110, 0, 0, -3801106, 0, 0, -3801102, 0, 0, -3801098, 0, 0, -3801094, 0, 0, -3801090, 0, 0, -3866622, 0, 0, -3866618, 0, 0, -3866614, 0, 0, -3866610, 0, 0, -3866606, 0, 0, -3538990, 0, 0, -3604462, 0, 0, -3276846, 0, 0, -3342318, 0, 0, -3014702, 0, 0, -3080174, 0, 0, -2752558, 0, 0, -2818030, 0, 0, -2490414, 0, 0, -2555886, 0, 0, -2228270, 0, 0, -2293742, 0, 0, -1966126, 0, 0, -2031598, 0, 0, -1703982, 0, 0, -1769454, 0, 0, -1441838, 0, 0, -1507310, 0, 0, -1179694, 0, 0, -1245166, 0, 0, -917550, 0, 0, -983022, 0, 0, -655406, 0, 0, -720878, 0, 0, -393262, 0, 0, -458734, 0, 0, -131118, 0, 0, -196590, 0, 0, 131026, 0, 0, 65554, 0, 0, 393170, 0, 0, 327698, 0, 0, 655314, 0, 0, 589842, 0, 0, 917458, 0, 0, 917462, 0, 0, 917466, 0, 0, 917470, 0, 0, 917474, 0, 0, 917478, 0, 0, 917482, 0, 0, 917486, 0, 0, 917490, 0, 0, 917494, 0, 0, 917498, 0, 0, 917502, 0, 0, 851970, 0, 0, 851974, 0, 0, 851978, 0, 0, 851982, 0, 0, 851986, 0, 0 )
+[node name="laterais" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( -327693, 0, 0, -327689, 0, 0, -327685, 0, 0, -327681, 0, 0, -393213, 0, 0, -393209, 0, 0, -393205, 0, 0, -393201, 0, 0, -393197, 0, 0, -393193, 0, 0, -393189, 0, 0, -393185, 0, 0, -393181, 0, 0, -393177, 0, 0, -393173, 0, 0, -393170, 0, 0, -393166, 0, 0, -393162, 0, 0, -393158, 0, 0, -65549, 0, 0, -131058, 0, 0, -131042, 0, 0, -131014, 0, 0, 196595, 0, 0, 131130, 0, 0, 458739, 0, 0, 393274, 0, 0, 720883, 0, 0, 655418, 0, 0, 983027, 0, 0, 917562, 0, 0, 1245171, 0, 0, 1179706, 0, 0, 1507315, 0, 0, 1441850, 0, 0, 1769459, 0, 0, 1703994, 0, 0, 2031603, 0, 0, 1966138, 0, 0, 2293747, 0, 0, 2228282, 0, 0, 2555891, 0, 0, 2490426, 0, 0, 2818035, 0, 0, 2752570, 0, 0, 3080179, 0, 0, 3014714, 0, 0, 3342323, 0, 0, 3276858, 0, 0, 3604467, 0, 0, 3539002, 0, 0, 3866611, 0, 0, 3801146, 0, 0, 4128755, 0, 0, 4063247, 0, 0, 4063263, 0, 0, 4063290, 0, 0, 4390899, 0, 0, 4390903, 0, 0, 4390907, 0, 0, 4390911, 0, 0, 4325379, 0, 0, 4325383, 0, 0, 4325387, 0, 0, 4325391, 0, 0, 4325394, 0, 0, 4325398, 0, 0, 4325402, 0, 0, 4325406, 0, 0, 4325410, 0, 0, 4325414, 0, 0, 4325418, 0, 0, 4325422, 0, 0, 4325426, 0, 0, 4325430, 0, 0, 4325434, 0, 0 )
 
 [node name="Torre3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1416, 736 )
@@ -152,7 +111,7 @@ margin_left = 1250.0
 margin_top = 1568.0
 margin_right = 1613.0
 margin_bottom = 1845.0
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
