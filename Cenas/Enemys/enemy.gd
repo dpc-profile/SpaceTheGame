@@ -39,12 +39,11 @@ func dead():
 	queue_free()
 	
 func dead_animation():
-	set_physics_process(false)
-	na_area = false
-	var animation = preload("res://Cenas/Efeitos/Ship_Explosion.tscn").instance()
+#	set_physics_process(false)
+#	na_area = false
+	var animation = preload("res://Cenas/Efeitos/explosion.tscn").instance()
 	animation.position = get_global_position()
 	get_tree().get_root().add_child(animation)
-	
 func _on_Visao_body_entered(body):
 	if body.is_in_group("player1"):
 		na_area = true

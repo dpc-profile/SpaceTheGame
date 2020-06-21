@@ -23,7 +23,6 @@ script = ExtResource( 5 )
 position = Vector2( -7.06383, -4.69124 )
 scale = Vector2( 0.460777, 0.460777 )
 frames = SubResource( 1 )
-frame = 2
 playing = true
 
 [node name="Explosion2" type="AnimatedSprite" parent="."]

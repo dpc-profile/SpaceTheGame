@@ -25,6 +25,9 @@ scale = Vector2( 0.8, 0.8 )
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.05, 0.05 )
@@ -43,6 +46,10 @@ color = Color( 0.984314, 0.466667, 0.427451, 0.639216 )
 energy = 1.5
 shadow_enabled = true
 
+[node name="smoke_particle" parent="." instance=ExtResource( 5 )]
+position = Vector2( 0.735077, 0 )
+scale = Vector2( 1, 1 )
+
 [node name="ProgressBar" parent="." instance=ExtResource( 4 )]
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
@@ -60,13 +67,15 @@ shape = SubResource( 3 )
 [node name="FireRate" type="Timer" parent="."]
 autostart = true
 
-[node name="smoke_particle" parent="." instance=ExtResource( 5 )]
-
 [node name="technical_problem" parent="." instance=ExtResource( 6 )]
-position = Vector2( -7.64197, 27.2908 )
+position = Vector2( -52.3711, -34.7752 )
+rotation = 1.48729
+emitting = false
 
 [node name="technical_problem2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 31.108, -17.7092 )
+position = Vector2( 19.3189, 8.9896 )
+rotation = 0.557964
+emitting = false
 [connection signal="body_entered" from="Visao" to="." method="_on_Visao_body_entered"]
 [connection signal="body_exited" from="Visao" to="." method="_on_Visao_body_exited"]
 [connection signal="timeout" from="FireRate" to="." method="_on_FireRate_timeout"]
