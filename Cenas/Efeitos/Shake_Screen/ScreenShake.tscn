@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Cenas/Efeitos/Shake_Screen/ScreenShake.gd" type="Script" id=1]
+
+[node name="ScreenShake" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ShakeT" type="Tween" parent="."]
+
+[node name="Frequence" type="Timer" parent="."]
+
+[node name="Duration" type="Timer" parent="."]
+[connection signal="timeout" from="Frequence" to="." method="_on_Frequence_timeout"]
+[connection signal="timeout" from="Duration" to="." method="_on_Duration_timeout"]
