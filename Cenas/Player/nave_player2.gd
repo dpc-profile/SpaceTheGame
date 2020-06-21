@@ -33,10 +33,13 @@ func _physics_process(delta):
 	if Input.is_action_pressed("mouse_left") and can_fire:
 		shoot()
 
-func _process(delta):	
+func _process(delta):
+	
+	if Input.is_action_just_pressed("ui_select"):
+		$Camera2D/ScreenShake.start()
+		
 	if Global.vitoria == true:
 		vitoria()
-		
 	#Renan: Oculta ou mostra a gema ao lado da barra de vida
 	var gem_target = Global.collected
 	if(gem_target==true and Global.pickable_gem):
