@@ -73,6 +73,7 @@ position = Vector2( 0, -10 )
 polygon = PoolVector2Array( -29.591, 46.3422, -42.767, 34.2202, 0.450333, -43.7817, 44.7217, 33.6932, 32.0728, 46.8692, 0.977371, 31.585 )
 
 [node name="ProgressBar" parent="." instance=ExtResource( 6 )]
+self_modulate = Color( 0.0117647, 0.968627, 0.980392, 1 )
 light_mask = 2
 margin_left = -60.9753
 margin_top = 49.4993
