@@ -21,4 +21,5 @@ shape = SubResource( 1 )
 
 [node name="picked" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -13.0
 [connection signal="body_entered" from="." to="." method="_on_gem_spawn_body_entered"]

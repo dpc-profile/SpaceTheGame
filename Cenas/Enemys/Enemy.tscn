@@ -89,9 +89,13 @@ emitting = false
 
 [node name="hurt" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+volume_db = -17.0
+bus = "Musica_Opc"
 
 [node name="tiro" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
+volume_db = -21.0
+bus = "Musica_Opc"
 [connection signal="body_entered" from="Visao" to="." method="_on_Visao_body_entered"]
 [connection signal="body_exited" from="Visao" to="." method="_on_Visao_body_exited"]
 [connection signal="timeout" from="FireRate" to="." method="_on_FireRate_timeout"]

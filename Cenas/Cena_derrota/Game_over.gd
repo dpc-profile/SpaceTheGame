@@ -21,3 +21,8 @@ func _on_Timer_timeout():
 		if segundos == -1:
 			get_node("/root/menu_musica/Musica_CTF").play()
 			get_tree().change_scene("res://Cenas/Map/Mapa_Captura_Bandeira.tscn")
+
+
+func _on_Botao_sair_pressed():
+	get_tree().change_scene("res://Cenas/TelaMenu/TitleScream.tscn")
+	pass # Replace with function body.

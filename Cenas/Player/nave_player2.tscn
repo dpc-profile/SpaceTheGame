@@ -84,6 +84,10 @@ margin_bottom = 69.4993
 
 [node name="hurt" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+volume_db = -17.0
+bus = "Musica_Opc"
 
 [node name="tiro" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
+volume_db = -21.0
+bus = "Musica_Opc"
