@@ -90,6 +90,7 @@ func recebendo_dano(dano):
 		$technical_problem.emitting = true
 		$technical_problem2.emitting = true
 	if $ProgressBar.value <= 0:
+		return
 		game_over()
 
 

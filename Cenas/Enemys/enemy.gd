@@ -2,15 +2,20 @@ extends KinematicBody2D
 
 signal removed
 var cena_bala = preload("res://Cenas/Enemys/tiroInimigo.tscn")
-var speed = 100
+export var speed = 100
 var mov = Vector2(0,0)
 var minimap_icon = "mob"
 var na_area = false
+export var enemy = 1
 
 func _ready():
 	$smoke_particle.emitting = false
 	$technical_problem.emitting = false
 	$technical_problem2.emitting = false
+	if (enemy == 1):
+		$AnimationPlayer.play("enemy1")
+	else:
+		$AnimationPlayer.play("enemy2")
 	
 func _physics_process(delta):
 	mov.x = speed

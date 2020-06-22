@@ -2,10 +2,10 @@ extends KinematicBody2D
 
 var cena_bala = preload("res://Cenas/Enemys/Tower/tiroTorre.tscn")
 var mov = Vector2(0,0)
-var velx = 60
+export var velx = 60
 var dentro_area = false
 
-var hp = 60
+export var hp = 60
 var disable = false
 
 var minimap_icon="mob"

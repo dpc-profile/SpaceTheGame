@@ -213,7 +213,6 @@ tracks/4/keys = {
 }
 
 [node name="bullet_explosion" instance=ExtResource( 1 )]
-visible = false
 position = Vector2( 0, 0 )
 scale = Vector2( 1, 1 )
 emitting = false
@@ -245,7 +244,7 @@ initial_velocity = 15.0
 orbit_velocity = 0.25
 linear_accel_curve = SubResource( 3 )
 scale_amount_curve = SubResource( 4 )
-color_ramp = ExtResource( 4 )
+color_ramp = ExtResource( 3 )
 
 [node name="baixo_direita" type="CPUParticles2D" parent="." index="1"]
 emitting = false
@@ -261,7 +260,7 @@ initial_velocity = 15.0
 orbit_velocity = 0.25
 linear_accel_curve = SubResource( 3 )
 scale_amount_curve = SubResource( 4 )
-color_ramp = ExtResource( 4 )
+color_ramp = ExtResource( 3 )
 
 [node name="cima_esquerda" type="CPUParticles2D" parent="." index="2"]
 emitting = false
@@ -277,7 +276,7 @@ initial_velocity = 15.0
 orbit_velocity = 0.25
 linear_accel_curve = SubResource( 3 )
 scale_amount_curve = SubResource( 4 )
-color_ramp = ExtResource( 4 )
+color_ramp = ExtResource( 3 )
 
 [node name="cima_direita" type="CPUParticles2D" parent="." index="3"]
 emitting = false
@@ -293,7 +292,7 @@ initial_velocity = 15.0
 orbit_velocity = 0.25
 linear_accel_curve = SubResource( 3 )
 scale_amount_curve = SubResource( 4 )
-color_ramp = ExtResource( 4 )
+color_ramp = ExtResource( 3 )
 
 [node name="color_animation" type="AnimationPlayer" parent="." index="4"]
 anims/enemy_bullet = SubResource( 5 )

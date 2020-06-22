@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Cenas/Map/Tilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://imagens/Objects/BGTile (3).png" type="Texture" id=2]
@@ -11,7 +11,7 @@
 [ext_resource path="res://Cenas/Gem/gui_gem.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Cenas/Gem/gem_body.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Cenas/Menu_Pausa/Pause.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Fontes/Boldness.otf" type="DynamicFontData" id=12]
+[ext_resource path="res://Cenas/Map/Tempo_menu.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Cenas/Efeitos/stars.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Cenas/Fade_tela/Fade_telal.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Cenas/Map/Background.tscn" type="PackedScene" id=15]
@@ -36,10 +36,6 @@ points = PoolVector2Array( 256, 256, 0, 256, 0, 0, 256, 0 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
-
-[sub_resource type="DynamicFont" id=3]
-size = 25
-font_data = ExtResource( 12 )
 
 [node name="Mapa_Captura_Bandeira" type="Node2D"]
 script = ExtResource( 8 )
@@ -103,21 +99,7 @@ team = 1
 [node name="player2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 775.116, 1867.69 )
 
-[node name="Tempo_menu" type="RichTextLabel" parent="."]
-visible = false
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = 1250.0
-margin_top = 1568.0
-margin_right = 1613.0
-margin_bottom = 1845.0
-custom_fonts/normal_font = SubResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Timer" type="Timer" parent="Tempo_menu"]
-autostart = true
+[node name="Tempo_menu" parent="." instance=ExtResource( 12 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -146,4 +128,3 @@ position = Vector2( 777.064, 38.0381 )
 [node name="Pause" parent="CanvasLayer2" instance=ExtResource( 11 )]
 pause_mode = 2
 visible = false
-[connection signal="timeout" from="Tempo_menu/Timer" to="." method="_on_Timer_timeout"]
