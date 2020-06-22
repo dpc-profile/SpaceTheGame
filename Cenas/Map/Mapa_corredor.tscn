@@ -58,11 +58,6 @@ margin_bottom = 0.0
 
 [node name="Control" parent="." instance=ExtResource( 8 )]
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-
-[node name="Pause" parent="CanvasLayer2" instance=ExtResource( 9 )]
-visible = false
-
 [node name="Mob" parent="." instance=ExtResource( 11 )]
 position = Vector2( -6260.77, -415.314 )
 
@@ -160,3 +155,9 @@ position = Vector2( 3785.48, 351.622 )
 
 [node name="Mob32" parent="." instance=ExtResource( 11 )]
 position = Vector2( 4628.15, 1321.87 )
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Pause" parent="CanvasLayer2" instance=ExtResource( 9 )]
+pause_mode = 2
+visible = false

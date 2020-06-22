@@ -56,6 +56,12 @@ __meta__ = {
 }
 
 [node name="Fade_in" parent="." instance=ExtResource( 16 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -16.0
+margin_top = 548.0
+margin_right = 1040.0
+margin_bottom = 548.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource( 2 )
@@ -212,8 +218,16 @@ __meta__ = {
 margin_right = 360.0
 margin_bottom = 170.0
 
-[node name="SoloOptionButton" parent="EscolhaModo/VBoxContainer" instance=ExtResource( 14 )]
+[node name="Modo Facil" parent="EscolhaModo/VBoxContainer" instance=ExtResource( 14 )]
 margin_bottom = 51.0
+text = "Fácil"
+script = ExtResource( 15 )
+mouse_fora = Color( 1, 1, 1, 1 )
+mouse_dentro = Color( 1, 0, 0, 1 )
+
+[node name="Modo Dificil" parent="EscolhaModo/VBoxContainer" instance=ExtResource( 14 )]
+margin_bottom = 51.0
+text = "Difícil"
 script = ExtResource( 15 )
 mouse_fora = Color( 1, 1, 1, 1 )
 mouse_dentro = Color( 1, 0, 0, 1 )
@@ -265,9 +279,12 @@ __meta__ = {
 [connection signal="mouse_entered" from="MainChoices/Button/Control/ToolButton" to="MainChoices/Button/Control/ToolButton" method="_on_ToolButton_mouse_entered"]
 [connection signal="mouse_exited" from="MainChoices/Button/Control/ToolButton" to="MainChoices/Button/Control/ToolButton" method="_on_ToolButton_mouse_exited"]
 [connection signal="pressed" from="MainChoices/Button/Control/ToolButton" to="MainChoices/Button/Control/Popup" method="_on_ToolButton_pressed"]
-[connection signal="mouse_entered" from="EscolhaModo/VBoxContainer/SoloOptionButton" to="EscolhaModo/VBoxContainer/SoloOptionButton" method="_on_SoloOptionButton_mouse_entered"]
-[connection signal="mouse_exited" from="EscolhaModo/VBoxContainer/SoloOptionButton" to="EscolhaModo/VBoxContainer/SoloOptionButton" method="_on_SoloOptionButton_mouse_exited"]
-[connection signal="pressed" from="EscolhaModo/VBoxContainer/SoloOptionButton" to="EscolhaModo/VBoxContainer/SoloOptionButton" method="_on_SoloOptionButton_pressed"]
+[connection signal="mouse_entered" from="EscolhaModo/VBoxContainer/Modo Facil" to="EscolhaModo/VBoxContainer/Modo Facil" method="_on_SoloOptionButton_mouse_entered"]
+[connection signal="mouse_exited" from="EscolhaModo/VBoxContainer/Modo Facil" to="EscolhaModo/VBoxContainer/Modo Facil" method="_on_SoloOptionButton_mouse_exited"]
+[connection signal="pressed" from="EscolhaModo/VBoxContainer/Modo Facil" to="EscolhaModo/VBoxContainer/Modo Facil" method="_on_SoloOptionButton_pressed"]
+[connection signal="mouse_entered" from="EscolhaModo/VBoxContainer/Modo Dificil" to="EscolhaModo/VBoxContainer/Modo Dificil" method="_on_SoloOptionButton_mouse_entered"]
+[connection signal="mouse_exited" from="EscolhaModo/VBoxContainer/Modo Dificil" to="EscolhaModo/VBoxContainer/Modo Dificil" method="_on_SoloOptionButton_mouse_exited"]
+[connection signal="pressed" from="EscolhaModo/VBoxContainer/Modo Dificil" to="EscolhaModo/VBoxContainer/Modo Dificil" method="_on_Modo_Dificil_pressed"]
 [connection signal="mouse_entered" from="EscolhaModo/VBoxContainer/VoltarButton" to="EscolhaModo/VBoxContainer/VoltarButton" method="_on_VoltarButton_mouse_entered"]
 [connection signal="mouse_exited" from="EscolhaModo/VBoxContainer/VoltarButton" to="EscolhaModo/VBoxContainer/VoltarButton" method="_on_VoltarButton_mouse_exited"]
 [connection signal="pressed" from="EscolhaModo/VBoxContainer/VoltarButton" to="." method="_on_VoltarButton_pressed"]

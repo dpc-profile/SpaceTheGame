@@ -22,4 +22,11 @@ func _on_SoloOptionButton_mouse_exited():
 
 
 func _on_SoloOptionButton_pressed():
+	Global.dificuldade = "facil"
 	get_tree().change_scene("res://Cenas/TelaMenu/Tela_Nome.tscn")
+
+
+func _on_Modo_Dificil_pressed():
+	Global.dificuldade = "dificil"
+	get_tree().change_scene("res://Cenas/TelaMenu/Tela_Nome.tscn")
+	pass # Replace with function body.

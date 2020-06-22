@@ -21,6 +21,10 @@ func _on_Opcoes_pressed():
 
 #Sair do jogo
 func _on_Sair_do_jogo_pressed():
+	
+	get_tree().paused = not get_tree().paused
+	visible = not visible
+	
 	get_tree().change_scene("res://Cenas/TelaMenu/TitleScream.tscn")
 	get_node("/root/menu_musica/Musica_CTF").stop()#Para a MusicaDoMenu
 

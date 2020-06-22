@@ -16,3 +16,7 @@ func _on_NewGameButton_pressed():
 func _on_VoltarButton_pressed():
 	$MainChoices.show()
 	$EscolhaModo.hide()
+
+
+
+

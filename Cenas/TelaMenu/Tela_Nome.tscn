@@ -16,7 +16,7 @@ font_data = ExtResource( 6 )
 size = 40
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=3]
 size = 35
 font_data = ExtResource( 6 )
 
@@ -93,7 +93,7 @@ margin_left = 279.0
 margin_right = 554.0
 rect_min_size = Vector2( 275, 60 )
 focus_mode = 0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 enabled_focus_mode = 0
 script = ExtResource( 4 )
@@ -104,7 +104,7 @@ margin_left = 558.0
 margin_right = 833.0
 rect_min_size = Vector2( 275, 60 )
 focus_mode = 0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 enabled_focus_mode = 0
 script = ExtResource( 5 )
