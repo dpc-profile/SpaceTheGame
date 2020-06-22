@@ -94,24 +94,24 @@ flat = true
 
 [node name="Sair_do_jogo" type="Button" parent="CenterContainer/VBoxContainer"]
 pause_mode = 2
-margin_left = 17.0
+margin_left = 3.0
 margin_top = 30.0
-margin_right = 122.0
+margin_right = 136.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 100, 20 )
 size_flags_horizontal = 4
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 3 )
-text = "Sair do Jogo"
+text = "voltar ao menu"
 flat = true
 
 [node name="Opcoes" type="Button" parent="CenterContainer/VBoxContainer"]
 pause_mode = 2
 visible = false
-margin_left = 2.0
-margin_top = 50.0
-margin_right = 102.0
-margin_bottom = 76.0
+margin_left = 20.0
+margin_top = 60.0
+margin_right = 120.0
+margin_bottom = 86.0
 rect_min_size = Vector2( 100, 20 )
 size_flags_horizontal = 4
 size_flags_vertical = 0

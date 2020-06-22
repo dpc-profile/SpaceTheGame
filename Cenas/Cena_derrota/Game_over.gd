@@ -23,6 +23,8 @@ func _on_Timer_timeout():
 			get_tree().change_scene("res://Cenas/Map/Mapa_Captura_Bandeira.tscn")
 
 
-func _on_Botao_sair_pressed():
+
+
+func _on_Button_pressed():
 	get_tree().change_scene("res://Cenas/TelaMenu/TitleScream.tscn")
-	pass # Replace with function body.
+	

@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Cenas/Cena_vitoria/vitoria.gd" type="Script" id=1]
-[ext_resource path="res://Fontes/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Cenas/Cena_vitoria/volta_menu.gd" type="Script" id=2]
 [ext_resource path="res://Fontes/Boldness.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://Musica/Soundtrack/Wii_Music_-_No_Copyright.wav" type="AudioStream" id=4]
-[ext_resource path="res://Cenas/TelaMenu/Botões/MenuButton.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 65
@@ -16,15 +15,15 @@ font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 40
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 35
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 35
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 35
@@ -76,10 +75,10 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Contador" type="Label" parent="."]
-margin_left = 939.525
+margin_left = 922.944
 margin_top = 546.785
-margin_right = 962.525
-margin_bottom = 582.785
+margin_right = 945.944
+margin_bottom = 586.785
 custom_fonts/font = SubResource( 3 )
 text = "3"
 __meta__ = {
@@ -109,23 +108,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Botao_sair" parent="." instance=ExtResource( 5 )]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 379.791
-margin_top = 305.218
-margin_right = 657.791
-margin_bottom = 365.218
-rect_min_size = Vector2( 120, 60 )
+[node name="Button" type="Button" parent="."]
+margin_left = 404.557
+margin_top = 283.264
+margin_right = 628.557
+margin_bottom = 325.264
 focus_mode = 0
 custom_fonts/font = SubResource( 6 )
 enabled_focus_mode = 0
-text = "Voltar para o menu"
+text = "Voltar ao menu"
+flat = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+mouse_fora = Color( 1, 1, 1, 1 )
+mouse_dentro = Color( 1, 0, 0, 1 )
 
 [node name="vitoria" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -9.0
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="pressed" from="Botao_sair" to="." method="_on_Botao_sair_pressed"]
+[connection signal="mouse_entered" from="Button" to="Button" method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="Button" method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

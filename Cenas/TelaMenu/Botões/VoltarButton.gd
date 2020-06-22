@@ -18,3 +18,15 @@ func _on_Volta_mouse_exited():
 
 func _on_Volta_pressed():
 	get_tree().change_scene("res://Cenas/TelaMenu/TitleScream.tscn")
+
+
+func _on_VoltarButton_pressed():
+	pass # Replace with function body.
+
+
+func _on_VoltarButton_mouse_entered():
+	pass # Replace with function body.
+
+
+func _on_VoltarButton_mouse_exited():
+	pass # Replace with function body.

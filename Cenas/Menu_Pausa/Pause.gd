@@ -21,8 +21,8 @@ func _on_Opcoes_pressed():
 
 #Sair do jogo
 func _on_Sair_do_jogo_pressed():
-	get_tree().quit()
-
+	get_tree().change_scene("res://Cenas/TelaMenu/TitleScream.tscn")
+	
 
 		
 
