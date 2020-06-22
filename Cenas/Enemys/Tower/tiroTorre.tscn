@@ -1,11 +1,12 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://imagens/Torret Fire]/flame11-3.png" type="Texture" id=1]
 [ext_resource path="res://Cenas/Enemys/Tower/tiroTorre.gd" type="Script" id=2]
+[ext_resource path="res://Cenas/Efeitos/bullet_explosion.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 16.0
-height = 14.0
+radius = 17.0743
+height = 23.5058
 
 [node name="tiroTorre" type="Node2D"]
 
@@ -15,6 +16,7 @@ collision_mask = 3
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Area2D"]
+scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 1 )
 flip_h = true
 
@@ -24,7 +26,9 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="Area2D"]
-wait_time = 2.0
+wait_time = 2.1
 autostart = true
+
+[node name="bullet_explosion" parent="Area2D" instance=ExtResource( 3 )]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="bala_torre_acerta_body"]
 [connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_Timer_timeout"]

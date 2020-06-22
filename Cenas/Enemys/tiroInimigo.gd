@@ -10,7 +10,7 @@ func _on_bala_acerta_body_entered(body):
 	if body.is_in_group("player1"):
 		$Sprite.hide()
 		#ativação das particulas
-		$bullet_explosion/color_animation.play("player_bullet")
+		$bullet_explosion/color_animation.play("enemy_bullet")
 		$bullet_explosion/explosion_animation.play("explode")
 		body.recebendo_dano(dano)
 		#define delay de tempo para animação aparecer
