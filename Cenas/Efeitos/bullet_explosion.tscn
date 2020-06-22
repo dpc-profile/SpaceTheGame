@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Cenas/Efeitos/bullet_particle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://imagens/explosion/explosion.png" type="Texture" id=2]
@@ -25,6 +25,7 @@ max_value = 3.0
 _data = [ Vector2( 0, 3 ), 0.0, 0.0895762, 0, 0, Vector2( 0.346457, 1.88068 ), -5.00303, -5.00303, 0, 0, Vector2( 1, 0.5 ), -1.44318, 0.0, 0, 0 ]
 
 [sub_resource type="Animation" id=5]
+length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("baixo_esquerda:color_ramp")
 tracks/0/interp = 1
@@ -199,13 +200,31 @@ tracks/3/keys = {
 "update": 1,
 "values": [ true ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath(".:emitting")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
+
+[sub_resource type="Animation" id=8]
+resource_name = "trail"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "blue"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -232,8 +251,8 @@ color_ramp = ExtResource( 3 )
 
 [node name="baixo_esquerda" type="CPUParticles2D" parent="." index="0"]
 emitting = false
-amount = 50
-lifetime = 3.0
+amount = 75
+lifetime = 2.0
 one_shot = true
 local_coords = false
 emission_shape = 1
@@ -248,7 +267,7 @@ color_ramp = ExtResource( 3 )
 
 [node name="baixo_direita" type="CPUParticles2D" parent="." index="1"]
 emitting = false
-amount = 50
+amount = 75
 lifetime = 2.0
 one_shot = true
 local_coords = false
@@ -264,7 +283,7 @@ color_ramp = ExtResource( 3 )
 
 [node name="cima_esquerda" type="CPUParticles2D" parent="." index="2"]
 emitting = false
-amount = 50
+amount = 75
 lifetime = 2.0
 one_shot = true
 local_coords = false
@@ -280,7 +299,7 @@ color_ramp = ExtResource( 3 )
 
 [node name="cima_direita" type="CPUParticles2D" parent="." index="3"]
 emitting = false
-amount = 50
+amount = 75
 lifetime = 2.0
 one_shot = true
 local_coords = false
@@ -300,3 +319,7 @@ anims/player_bullet = SubResource( 6 )
 
 [node name="explosion_animation" type="AnimationPlayer" parent="." index="5"]
 anims/explode = SubResource( 7 )
+anims/trail = SubResource( 8 )
+
+[node name="trail_animation" type="AnimationPlayer" parent="." index="6"]
+anims/blue = SubResource( 9 )
