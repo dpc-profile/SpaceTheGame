@@ -12,17 +12,9 @@ https://www.youtube.com/playlist?list=PLv3l-oZCXaqkUEqrLsKJIAhAxK_Im6Qew
 
 
 
-## Mecanicas Definidas no jogo:
-
--Cadastro de player em php
-
--Multiplayer, usuários cadastrados interagem um com outro, em tempo real.
-
--Modo de jogo "captura a bandeira", onde são feito 2 times e o objetivo é capturar a bandeira inimiga e trazer até a propria base.
+## Descrição:
+Space The Game é um jogo de nave 2d top-down, focado no modo captura a bandeira, onde você enfrenta inimigos,e o  objetivo é roubar a bandeira inimiga e trazer para sua propria base. Com uma mecânica simples de movimentação onde é usado somente o mouse para se mover, você precisa destruir seus inimigos, desviar de balas, se possivel, e cumprir seu objetivo.
 
 
 
-## Concluido:
-
--Mecanica de movimentação da nave
 
