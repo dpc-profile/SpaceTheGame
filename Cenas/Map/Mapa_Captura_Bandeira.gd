@@ -3,7 +3,9 @@ extends Node2D
 var segundos = 0
 var minutos = 0 
 
+
 func _ready():
+	Global.map_select = 1
 	#conecta o sinal de removed emitido pelos mobs/gema com o minimap
 	for object in get_tree().get_nodes_in_group("minimap_objects"):
 		object.connect("removed", $CanvasLayer/MiniMap, "_on_object_removed")

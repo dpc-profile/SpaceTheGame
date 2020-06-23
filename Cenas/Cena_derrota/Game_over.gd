@@ -20,8 +20,10 @@ func _on_Timer_timeout():
 		get_node("Contador").set_text(str(segundos))
 		if segundos == -1:
 			get_node("/root/menu_musica/Musica_CTF").play()
-			get_tree().change_scene("res://Cenas/Map/Mapa_Captura_Bandeira.tscn")
-
+			if Global.dificuldade == "facil":
+				get_tree().change_scene("res://Cenas/Map/Mapa_Captura_Bandeira.tscn")
+			if Global.dificuldade == "dificil":
+				get_tree().change_scene("res://Cenas/Map/mapa_sobrevivencia.tscn")
 
 
 
