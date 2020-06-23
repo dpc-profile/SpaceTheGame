@@ -123,8 +123,12 @@ position = Vector2( 777.064, 38.0381 )
 
 [node name="Control" parent="." instance=ExtResource( 14 )]
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="Pause" parent="CanvasLayer2" instance=ExtResource( 11 )]
 pause_mode = 2
 visible = false
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

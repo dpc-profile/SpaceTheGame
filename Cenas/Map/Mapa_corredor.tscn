@@ -178,8 +178,12 @@ position = Vector2( -725.609, 66.7759 )
 [node name="Mob38" parent="." instance=ExtResource( 13 )]
 position = Vector2( 429.828, -640.454 )
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="Pause" parent="CanvasLayer2" instance=ExtResource( 9 )]
 pause_mode = 2
 visible = false
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
