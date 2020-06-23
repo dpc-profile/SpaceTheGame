@@ -18,7 +18,6 @@ func _on_bala_acerta_body_entered(body):
 		queue_free()
 	if body.is_in_group("parede"):
 		queue_free()
-
 #Se a bala não acertar, depois de 2 segundo ela some
 func _on_Timer_timeout():
 	queue_free()
