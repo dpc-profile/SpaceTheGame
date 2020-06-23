@@ -8,6 +8,7 @@ var gem_holder
 var vitoria = false
 var shake_screen = false
 var dificuldade = ""
+var map_select #Recebe qual mapa está selecionado, 1 para o mapa facil e 2 para o mapa dificil
 
 
 #recebe a posição global do nave_player2
