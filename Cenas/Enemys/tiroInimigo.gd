@@ -1,5 +1,5 @@
 extends Area2D
-export var dano = 20
+export var dano = 15
 
 
 func _process(delta):
@@ -15,6 +15,8 @@ func _on_bala_acerta_body_entered(body):
 		body.recebendo_dano(dano)
 		#define delay de tempo para animação aparecer
 		yield(get_tree().create_timer(2),"timeout")
+		queue_free()
+	if body.is_in_group("parede"):
 		queue_free()
 
 #Se a bala não acertar, depois de 2 segundo ela some

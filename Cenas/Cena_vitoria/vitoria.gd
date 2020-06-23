@@ -24,7 +24,7 @@ func _on_Timer_timeout():
 			if Global.dificuldade == "facil":
 				get_tree().change_scene("res://Cenas/Map/Mapa_Captura_Bandeira.tscn")
 			if Global.dificuldade == "dificil":
-				get_tree().change_scene("res://Cenas/Map/mapa_sobrevivencia.tscn")
+				get_tree().change_scene("res://Cenas/Map/Mapa_corredor.tscn")
 		
 
 

@@ -18,3 +18,4 @@ func _on_Timer_timeout():
 		minutos +=01
 		pega_tempo.pega_min = minutos
 		segundos = 0
+

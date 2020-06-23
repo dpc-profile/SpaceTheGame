@@ -1,8 +1,8 @@
 extends Area2D
-export var dano = 20
+export var dano = 15
 
 func _process(delta):
-	translate(Vector2(15,0))
+	translate(Vector2(10,0))
 
 #Ao tiro acertar um body, envia a informação de dano pra ele
 func bala_torre_acerta_body(body):
