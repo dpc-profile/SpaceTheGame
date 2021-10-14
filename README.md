@@ -4,7 +4,7 @@
 ## Release:
 A versão compilada está disponível para:
 - [Windows](https://github.com/dpc-profile/SpaceTheGame/releases/download/a/SpaceTheGame.exe)
-- [Linux](https://github.com/dpc-profile/SpaceTheGame/releases/download/a/spaceLinux.x86_64)
+- [Linux](https://github.com/dpc-profile/SpaceTheGame/releases/download/a/SpaceTheGameLinux.7z)
 
 As texturas e imagens utilizadas podem ser encontradas no link:
 https://opengameart.org/content/space-shooter-redux
